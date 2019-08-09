@@ -16,14 +16,14 @@ CREATE TYPE difficulty AS ENUM ('green', 'green to blue', 'green to black','blue
 
 -- create tables for report, trail, status report, damage report, county and state
 
-CREATE TABLE report (id BIGSERIAL PRIMARY KEY, first_name varchar(64),last_name varchar(64), trail_name REFERENCES trail (name), date_ date, email varchar(128), time_stamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(), geom geometry(Point, 4326), message varchar(255));
+CREATE TABLE state (name varchar(64), abbrev char(2));
 
-CREATE TABLE status_report (report_num INT REFERENCES report (id), condition_type conidition_);
+CREATE TABLE county (name varchar(64), state varchar REFERENCES state (state_name));
+
+CREATE TABLE trail (name varchar(64) NOT NULL, county varchar REFERENCES county (cnty_name), state varchar REFERENCES state(name), mileage FLOAT(8), condition_status condition_, difficulty_level difficulty, email varchar(128), website varchar(255), geom geometry(Point, 4326));
+
+CREATE TABLE report (id BIGSERIAL PRIMARY KEY, first_name varchar(64),last_name varchar(64), trail_name varchar REFERENCES trail (name), date_ date, email varchar(128), time_stamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(), geom geometry(Point, 4326), message varchar(255));
+
+CREATE TABLE status_report (report_num INT REFERENCES report (id), condition_type condition_);
 
 CREATE TABLE damage_report (report_num INT REFERENCES report (id), damage_type damage);
-
-CREATE TABLE trail (name varchar(64) NOT NULL, county REFERENCES county (name), state REFERENCES state(name), mileage FLOAT(8), condition_status condition_, difficulty_level difficulty, email varchar(128), website varchar(255), geom geometry(Point, 4326));
-
-CREATE TABLE county (name varchar(64), state REFERENCES state (name));
-
-CREATE TABLE state (name varchar(64), abbrev char(2));

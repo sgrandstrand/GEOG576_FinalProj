@@ -1,0 +1,63 @@
+OBJECTID,Name,County,State,Miles,Difficulty,Difficul_1,Condition,Website,Email,Latitude,Longitude
+1,Fort Dupont,District of Columbia,District of Columbia,6.2,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/fort-dupont,,-76.9573,38.8803
+2,Chesapeake Church,District of Columbia,District of Columbia,,,,Dry,https://more-mtb.org/collections/trails/products/chesapeake-church-trails,operations@more-mtb.org,-77.0352,38.8895
+3,495 Jumps,Fairfax County,Virginia,,Green,Black,Dry,https://more-mtb.org/collections/trails/products/495-jumps,495liaison@more-mtb.org,-77.2203,38.838
+4,Brookfield Park,Fairfax County,Virginia,,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/brookfield,brookfield@more-mtb.org,-77.2002,38.7866
+5,Bull Run Occoquan Trail (BROT),Fairfax County,Virginia,6.2,Blue,Black,Dry,https://more-mtb.org/collections/trails/products/bull-run-occoquan-brot,brot@more-mtb.org,-77.3843,38.7438
+6,Colts Neck,Fairfax County,Virginia,2,Black,Black,Dry,https://more-mtb.org/collections/trails/products/colts-neck,clopperlake@more-mtb.org,-77.3313,38.9507
+7,Conway Robinson State Forest,Prince William,Virginia,,Green,Blue,Wet,https://more-mtb.org/collections/trails/products/conway-robinson,conway@more-mtb.org,-77.588,38.8035
+8,Cross County Trail (CCT),Fairfax County,Virginia,40.6,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/cross-county-trail-cct,cctcentral@more-mtb.org,-77.2554,38.6835
+9,Fountainhead Regional Park,Fairfax County,Virginia,12,Green,Black,Dry,https://more-mtb.org/collections/trails/products/fountainhead-regional-park,fountainhead@more-mtb.org,-77.3304,38.7244
+10,Fred Crabtree,Fairfax County,Virginia,1.5,Green,Green,Dry,https://more-mtb.org/collections/trails/products/fred-crabtree,crabtree@more-mtb.org,-77.3612,38.913
+11,Freedom Center,Loudoun,Virginia,6.2,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/freedom-center,freedomcenter@more-mtb.org,-77.5504,39.2289
+12,George Washington National Forest,Shenandoah,Virginia,612,Green,Black,Dry,https://more-mtb.org/collections/trails/products/gw-national-forest,gwnf@more-mtb.org,-78.3201,38.9345
+13,James Long Park,Prince William,Virginia,,,,Dry,https://more-mtb.org/collections/trails/products/james-long-park,,-77.6316,38.8513
+14,Lake Accotink Park,Fairfax County,Virginia,5,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/lake-accotink,lakeaccotink@more-mtb.org,-77.2174,38.7921
+15,Lake Fairfax Park,Fairfax County,Virginia,10,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/lake-fairfax-park,lakefairfax@more-mtb.org,-77.3161,38.9657
+16,Laurel Hill,Fairfax County,Virginia,10.7,Green,Green,Dry,https://more-mtb.org/collections/trails/products/laurel-hill,laurel_hill@more-mtb.org,-77.2458,38.7011
+17,Locust Shade Park,Prince William,Virginia,4.5,Green,Green,Dry,https://more-mtb.org/collections/trails/products/locust-shade,locustshade@more-mtb.org,-77.3527,38.5322
+18,Meadowood Recreation Area,Fairfax County,Virginia,8.8,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/meadowood-recreation-area,meadowood@more-mtb.org,-77.2091,38.6831
+19,Mount Vernon Park,Fairfax County,Virginia,4,Green,Green,Dry,https://more-mtb.org/collections/trails/products/mount-vernon-park,mountvernon@more-mtb.org,-77.0644,38.7736
+20,Prince William Forest Park,Prince William,Virginia,,,,Dry,https://more-mtb.org/collections/trails/products/prince-william-forest-park,operations@more-mtb.org,-77.3481,38.5596
+21,Riverbend Park,Fairfax County,Virginia,6,Green,Green,Dry,https://more-mtb.org/collections/trails/products/riverbend-park,riverbend@more-mtb.org,-77.2463,39.0193
+22,Wakefield Park,Fairfax County,Virginia,1.8,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/wakefield-park,wakefield@more-mtb.org,-77.2235,38.8179
+23,Annapolis Waterworks,Anne Arundel,Maryland,5,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/waterworks-park,waterworks@more-mtb.org,-76.5564,38.9901
+24,Bacon Ridge,Anne Arundel,Maryland,18,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/bacon-ridge,baconridge@more-mtb.org,-76.6083,39.0062
+25,Banneker Park,Baltimore County,Maryland,,,,Dry,https://more-mtb.org/collections/trails/products/banneker-park,banneker@more-mtb.org,-76.7934,39.2684
+26,Belmont,Howard,Maryland,1.6,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/belmont,belmont@more-mtb.org,-76.7513,39.2177
+27,Black Hill Regional Park,Montgomery,Maryland,16,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/black-hill-regional-park,blackhill@more-mtb.org,-77.2914,39.1952
+28,Cabin John Park,Montgomery,Maryland,9,Green,Green,Dry,https://more-mtb.org/collections/trails/products/cabin-john-park,cabinjohn@more-mtb.org,-77.1474,39.0336
+29,Cedarville State Forest,Prince George's,Maryland,10,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/cedarville-state-forest,cedarville@more-mtb.org,-76.8302,38.6471
+30,Clopper Lake,Montgomery,Maryland,,,,Dry,https://more-mtb.org/collections/trails/products/clopper-lake,clopperlake@more-mtb.org,-77.2526,39.1461
+31,Cosca Regional Park,Prince George's,Maryland,8.7,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/cosca-regional-park,<Null>,-76.9099,38.7399
+32,Emmitsburg,Frederick,Maryland,7.2,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/emmitsburg,emmitsburg@more-mtb.org,-77.3881,39.6955
+33,Fairland Regional Park,Prince George's,Maryland,,,,Dry,https://more-mtb.org/collections/trails/products/fairland-regional-park,fairland@more-mtb.org,-76.9224,39.0791
+34,Gambrill State Park,Frederick,Maryland,28,Blue,Black,Dry,https://more-mtb.org/collections/trails/products/gambrill-state-park,gambrill@more-mtb.org,-77.4913,39.4622
+35,South Germantown Bike Park,Montgomery,Maryland,4,Green,Green,Wet,https://more-mtb.org/collections/trails/products/germantown-bike-park,GermantownPumpTrack@more-mtb.org,-77.313,39.1475
+36,Gillis Falls,Carroll,Maryland,4,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/gillis-falls,gillisfalls@more-mtb.org,-77.0847,39.3806
+37,Greenbrier State Park,Washington,Maryland,5,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/greenbrier-state-park,grennbrier@more-mtb.org,-77.6145,39.5393
+38,Gwynns Falls-Leakin Park,Baltimore City,Maryland,15,Green,Green,Dry,https://more-mtb.org/collections/trails/products/gwynns-falls-leakin-park,gwynnsfalls-leakinpark@more-mtb.org,-76.6937,39.3046
+39,Hashawa Environmental Center,Carroll,Maryland,,,,Dry,https://more-mtb.org/collections/trails/products/hashawha,<Null>,-76.9901,39.6459
+40,Hoyles Mill/Diabase Trails,Montgomery,Maryland,6.5,Green,Green,Dry,https://more-mtb.org/collections/trails/products/hoyles-mill-diabase-trail,hoylesmill@more-mtb.org,-77.3105,39.1457
+41,Kent Island Trail,Queen Anne's,Maryland,,,,Dry,https://more-mtb.org/collections/trails/products/kent-island-trail,operations@more-mtb.org,-76.3065,38.9879
+42,Little Bennett Regional Park,Montgomery,Maryland,19,Green,Green,Dry,https://more-mtb.org/collections/trails/products/little-bennett-regional-park,littlebennett@more-mtb.org,-77.2802,39.2659
+43,Little Gunpowder Falls State Park,Baltimore County,Maryland,43,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/little-gunpowder-falls-state-park,,-76.4084,39.4747
+44,Loch Raven,Baltimore County,Maryland,30,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/loch-raven,lochraven@more-mtb.org,-76.5968,39.4245
+45,Monocacy Natural Resources Area,Frederick,Maryland,7.2,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/monocacy-natural-resources-area,monocacy@more-mtb.org,-77.439,39.2433
+46,Muddy Branch Trail,Montgomery,Maryland,9.1,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/muddy-branch-park,muddybranch@more-mtb.org,-77.3048,39.066
+47,Northwest Branch Park,Montgomery,Maryland,3,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/northwest-branch-park,northwestbranch@more-mtb.org,-77.0059,39.0307
+48,Patapsco Valley State Park - Avalon,Baltimore County,Maryland,220,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.7048,39.2198
+49,Patapsco Valley State Park - Daniels,Howard,Maryland,220,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.8156,39.3153
+50,Patapsco Valley State Park - McKeldin,Carroll,Maryland,220,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.8891,39.3593
+51,Patapsco Valley State Park - Woodstock,Baltimore County,Maryland,220,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.8687,39.333
+52,Patuxent River Park,Montgomery,Maryland,2,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/patuxent-river-park,patuxent@more-mtb.org,-77.1361,39.2755
+53,Pepco Trail,Montgomery,Maryland,,,,Dry,https://more-mtb.org/collections/trails/products/pepco-trail,,-77.3026,39.1424
+54,"River's Edge, Brunswick",Frederick,Maryland,4,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/rivers-edge-at-brunswick,riversedgetrails@more-mtb.org,-77.6081,39.311
+55,Rockburn Branch Park,Howard,Maryland,9,Green,Green,Dry,https://more-mtb.org/collections/trails/products/rockburn-branch-park,rockburn@more-mtb.org,-76.764,39.2208
+56,Rosaryville State Park,Prince George's,Maryland,11,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/rosaryville-state-park,rosaryville@more-mtb.org,-76.8053,38.7825
+57,Schaffer Farms,Montgomery,Maryland,60,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/schaeffer-arms,schaeffer@more-mtb.org,-77.3106,39.143
+58,Seneca Bluffs Trail,Montgomery,Maryland,8,Blue,Blue,Dry,https://more-mtb.org/collections/trails/products/seneca-bluffs-trail,senecabluffs@more-mtb.org,-77.3144,39.127
+59,Seneca Greenway Trail,Montgomery,Maryland,11,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/seneca-greenway,senecagreenway@more-mtb.org,-77.2292,39.1675
+60,Seneca Ridge Trail (SRT),Montgomery,Maryland,7,Green,Blue,Dry,https://more-mtb.org/collections/trails/products/seneca-ridge-trail-srt,senecaridge@more-mtb.org,-77.2676,39.1325
+61,Severn Run,Anne Arundel,Maryland,,,,Dry,https://more-mtb.org/collections/trails/products/severn-run,operations@more-mtb.org,-76.6384,39.0992
+62,Frederick Watershed,Frederick,Maryland,,Blue,Black,Dry,https://more-mtb.org/collections/trails/products/frederick-watershed,frederickwatershed@more-mtb.org,-77.4946,39.5159
