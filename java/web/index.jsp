@@ -32,6 +32,30 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <a class="navbar-brand">MORE Trail Status</a>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="sidebar col-xs-3">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#create_report" data-toggle="tab">Create Report</a></li>
+          <li><a href="#query_report" data-toggle="tab">Query</a></li>
+        </ul>
+
+        <div class="tab-content ">
+          <div class="tab-pane active" id="create_report"></div>
+          <div class="tab-pane" id="query_report"></div>
+        </div>
+      </div>
+
+      <div id="map-canvas" class="col-xs-9"></div>
+
+    </div>
+  </div>
+
 
 </body>
 </html>
