@@ -1,0 +1,63 @@
+﻿trailID,name,countyID,stateID,mileage,condition_status,difficulty_level,email,website,latitude,longitude
+1,Fort Dupont,11001,11,6.2,dry,green to blue,https://more-mtb.org/collections/trails/products/fort-dupont,,-76.9573,38.8803
+2,Chesapeake Church,11001,11,,dry,,https://more-mtb.org/collections/trails/products/chesapeake-church-trails,operations@more-mtb.org,-77.0352,38.8895
+3,495 Jumps,51029,51,,dry,green to black,https://more-mtb.org/collections/trails/products/495-jumps,495liaison@more-mtb.org,-77.2203,38.838
+4,Brookfield Park,51029,51,,dry,green to blue,https://more-mtb.org/collections/trails/products/brookfield,brookfield@more-mtb.org,-77.2002,38.7866
+5,Bull Run Occoquan Trail (BROT),51029,51,6.2,dry,blue to black,https://more-mtb.org/collections/trails/products/bull-run-occoquan-brot,brot@more-mtb.org,-77.3843,38.7438
+6,Colts Neck,51029,51,2,dry,black,https://more-mtb.org/collections/trails/products/colts-neck,clopperlake@more-mtb.org,-77.3313,38.9507
+7,Conway Robinson State Forest,51076,51,,wet,green to blue,https://more-mtb.org/collections/trails/products/conway-robinson,conway@more-mtb.org,-77.588,38.8035
+8,Cross County Trail (CCT),51029,51,40.6,dry,green to blue,https://more-mtb.org/collections/trails/products/cross-county-trail-cct,cctcentral@more-mtb.org,-77.2554,38.6835
+9,Fountainhead Regional Park,51029,51,12,dry,green to black,https://more-mtb.org/collections/trails/products/fountainhead-regional-park,fountainhead@more-mtb.org,-77.3304,38.7244
+10,Fred Crabtree,51029,51,1.5,dry,green,https://more-mtb.org/collections/trails/products/fred-crabtree,crabtree@more-mtb.org,-77.3612,38.913
+11,Freedom Center,51053,51,6.2,dry,green to blue,https://more-mtb.org/collections/trails/products/freedom-center,freedomcenter@more-mtb.org,-77.5504,39.2289
+12,George Washington National Forest,51085,51,612,dry,green to black,https://more-mtb.org/collections/trails/products/gw-national-forest,gwnf@more-mtb.org,-78.3201,38.9345
+13,James Long Park,51076,51,,dry,,https://more-mtb.org/collections/trails/products/james-long-park,,-77.6316,38.8513
+14,Lake Accotink Park,51029,51,5,dry,green to blue,https://more-mtb.org/collections/trails/products/lake-accotink,lakeaccotink@more-mtb.org,-77.2174,38.7921
+15,Lake Fairfax Park,51029,51,10,dry,green to blue,https://more-mtb.org/collections/trails/products/lake-fairfax-park,lakefairfax@more-mtb.org,-77.3161,38.9657
+16,Laurel Hill,51029,51,10.7,dry,green,https://more-mtb.org/collections/trails/products/laurel-hill,laurel_hill@more-mtb.org,-77.2458,38.7011
+17,Locust Shade Park,51076,51,4.5,dry,green,https://more-mtb.org/collections/trails/products/locust-shade,locustshade@more-mtb.org,-77.3527,38.5322
+18,Meadowood Recreation Area,51029,51,8.8,dry,green to blue,https://more-mtb.org/collections/trails/products/meadowood-recreation-area,meadowood@more-mtb.org,-77.2091,38.6831
+19,Mount Vernon Park,51029,51,4,dry,green,https://more-mtb.org/collections/trails/products/mount-vernon-park,mountvernon@more-mtb.org,-77.0644,38.7736
+20,Prince William Forest Park,51076,51,,dry,,https://more-mtb.org/collections/trails/products/prince-william-forest-park,operations@more-mtb.org,-77.3481,38.5596
+21,Riverbend Park,51029,51,6,dry,green,https://more-mtb.org/collections/trails/products/riverbend-park,riverbend@more-mtb.org,-77.2463,39.0193
+22,Wakefield Park,51029,51,1.8,dry,green to blue,https://more-mtb.org/collections/trails/products/wakefield-park,wakefield@more-mtb.org,-77.2235,38.8179
+23,Annapolis Waterworks,24003,24,5,dry,green to blue,https://more-mtb.org/collections/trails/products/waterworks-park,waterworks@more-mtb.org,-76.5564,38.9901
+24,Bacon Ridge,24003,24,18,dry,blue,https://more-mtb.org/collections/trails/products/bacon-ridge,baconridge@more-mtb.org,-76.6083,39.0062
+25,Banneker Park,24005,24,,dry,,https://more-mtb.org/collections/trails/products/banneker-park,banneker@more-mtb.org,-76.7934,39.2684
+26,Belmont,24027,24,1.6,dry,blue,https://more-mtb.org/collections/trails/products/belmont,belmont@more-mtb.org,-76.7513,39.2177
+27,Black Hill Regional Park,24031,24,16,dry,green to blue,https://more-mtb.org/collections/trails/products/black-hill-regional-park,blackhill@more-mtb.org,-77.2914,39.1952
+28,Cabin John Park,24031,24,9,dry,green,https://more-mtb.org/collections/trails/products/cabin-john-park,cabinjohn@more-mtb.org,-77.1474,39.0336
+29,Cedarville State Forest,24033,24,10,dry,green to blue,https://more-mtb.org/collections/trails/products/cedarville-state-forest,cedarville@more-mtb.org,-76.8302,38.6471
+30,Clopper Lake,24031,24,,dry,,https://more-mtb.org/collections/trails/products/clopper-lake,clopperlake@more-mtb.org,-77.2526,39.1461
+31,Cosca Regional Park,24033,24,8.7,dry,green to blue,https://more-mtb.org/collections/trails/products/cosca-regional-park,<Null>,-76.9099,38.7399
+32,Emmitsburg,24021,24,7.2,dry,green to blue,https://more-mtb.org/collections/trails/products/emmitsburg,emmitsburg@more-mtb.org,-77.3881,39.6955
+33,Fairland Regional Park,24033,24,,dry,,https://more-mtb.org/collections/trails/products/fairland-regional-park,fairland@more-mtb.org,-76.9224,39.0791
+34,Gambrill State Park,24021,24,28,dry,blue to black,https://more-mtb.org/collections/trails/products/gambrill-state-park,gambrill@more-mtb.org,-77.4913,39.4622
+35,South Germantown Bike Park,24031,24,4,wet,green,https://more-mtb.org/collections/trails/products/germantown-bike-park,GermantownPumpTrack@more-mtb.org,-77.313,39.1475
+36,Gillis Falls,24013,24,4,dry,blue,https://more-mtb.org/collections/trails/products/gillis-falls,gillisfalls@more-mtb.org,-77.0847,39.3806
+37,Greenbrier State Park,24043,24,5,dry,green to blue,https://more-mtb.org/collections/trails/products/greenbrier-state-park,grennbrier@more-mtb.org,-77.6145,39.5393
+38,Gwynns Falls-Leakin Park,24510,24,15,dry,green,https://more-mtb.org/collections/trails/products/gwynns-falls-leakin-park,gwynnsfalls-leakinpark@more-mtb.org,-76.6937,39.3046
+39,Hashawa Environmental Center,24013,24,,dry,,https://more-mtb.org/collections/trails/products/hashawha,<Null>,-76.9901,39.6459
+40,Hoyles Mill/Diabase Trails,24031,24,6.5,dry,green,https://more-mtb.org/collections/trails/products/hoyles-mill-diabase-trail,hoylesmill@more-mtb.org,-77.3105,39.1457
+41,Kent Island Trail,24035,24,,dry,,https://more-mtb.org/collections/trails/products/kent-island-trail,operations@more-mtb.org,-76.3065,38.9879
+42,Little Bennett Regional Park,24031,24,19,dry,green,https://more-mtb.org/collections/trails/products/little-bennett-regional-park,littlebennett@more-mtb.org,-77.2802,39.2659
+43,Little Gunpowder Falls State Park,24005,24,43,dry,green to blue,https://more-mtb.org/collections/trails/products/little-gunpowder-falls-state-park,,-76.4084,39.4747
+44,Loch Raven,24005,24,30,dry,green to blue,https://more-mtb.org/collections/trails/products/loch-raven,lochraven@more-mtb.org,-76.5968,39.4245
+45,Monocacy Natural Resources Area,24021,24,7.2,dry,blue,https://more-mtb.org/collections/trails/products/monocacy-natural-resources-area,monocacy@more-mtb.org,-77.439,39.2433
+46,Muddy Branch Trail,24031,24,9.1,dry,green to blue,https://more-mtb.org/collections/trails/products/muddy-branch-park,muddybranch@more-mtb.org,-77.3048,39.066
+47,Northwest Branch Park,24031,24,3,dry,blue,https://more-mtb.org/collections/trails/products/northwest-branch-park,northwestbranch@more-mtb.org,-77.0059,39.0307
+48,Patapsco Valley State Park - Avalon,24005,24,220,dry,blue,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.7048,39.2198
+49,Patapsco Valley State Park - Daniels,24027,24,220,dry,blue,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.8156,39.3153
+50,Patapsco Valley State Park - McKeldin,24013,24,220,dry,blue,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.8891,39.3593
+51,Patapsco Valley State Park - Woodstock,24005,24,220,dry,blue,https://more-mtb.org/collections/trails/products/patapsco-valley-state-park,patapsco@more-mtb.org,-76.8687,39.333
+52,Patuxent River Park,24031,24,2,dry,blue,https://more-mtb.org/collections/trails/products/patuxent-river-park,patuxent@more-mtb.org,-77.1361,39.2755
+53,Pepco Trail,24031,24,,dry,,https://more-mtb.org/collections/trails/products/pepco-trail,,-77.3026,39.1424
+54,"River's Edge, Brunswick",24021,24,4,dry,green to blue,https://more-mtb.org/collections/trails/products/rivers-edge-at-brunswick,riversedgetrails@more-mtb.org,-77.6081,39.311
+55,Rockburn Branch Park,24027,24,9,dry,green,https://more-mtb.org/collections/trails/products/rockburn-branch-park,rockburn@more-mtb.org,-76.764,39.2208
+56,Rosaryville State Park,24033,24,11,dry,green to blue,https://more-mtb.org/collections/trails/products/rosaryville-state-park,rosaryville@more-mtb.org,-76.8053,38.7825
+57,Schaffer Farms,24031,24,60,dry,blue,https://more-mtb.org/collections/trails/products/schaeffer-arms,schaeffer@more-mtb.org,-77.3106,39.143
+58,Seneca Bluffs Trail,24031,24,8,dry,blue,https://more-mtb.org/collections/trails/products/seneca-bluffs-trail,senecabluffs@more-mtb.org,-77.3144,39.127
+59,Seneca Greenway Trail,24031,24,11,dry,green to blue,https://more-mtb.org/collections/trails/products/seneca-greenway,senecagreenway@more-mtb.org,-77.2292,39.1675
+60,Seneca Ridge Trail (SRT),24031,24,7,dry,green to blue,https://more-mtb.org/collections/trails/products/seneca-ridge-trail-srt,senecaridge@more-mtb.org,-77.2676,39.1325
+61,Severn Run,24003,24,,dry,,https://more-mtb.org/collections/trails/products/severn-run,operations@more-mtb.org,-76.6384,39.0992
+62,Frederick Watershed,24021,24,,dry,blue to black,https://more-mtb.org/collections/trails/products/frederick-watershed,frederickwatershed@more-mtb.org,-77.4946,39.5159
