@@ -24,9 +24,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-  <!-- Google Map js libraries  CAN YOU OWN API HERE-->
+  <!-- Google Map js libraries  CAN YOU OWN API HERE -->
   <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsknU0BjvUqyd4Y78SK7WWrtKlJICo268&libraries=places"
+          src="https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&libraries=places"
   ></script>
 
 </head>
