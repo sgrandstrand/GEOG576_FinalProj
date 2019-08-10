@@ -19,7 +19,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.94" level="application_server_libraries" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -49,6 +48,8 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="bootstrap" level="application" />
+<!--    <orderEntry type="library" name="bootstrap" level="application" /> -->
+<!--    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.94" level="application_server_libraries" /> -->
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.21" level="application_server_libraries" />
   </component>
 </module>
