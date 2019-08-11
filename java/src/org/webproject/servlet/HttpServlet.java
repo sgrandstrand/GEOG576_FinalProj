@@ -57,7 +57,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         // Query trails
         if (tab_id.equals("0")) {
             try {
-                queryTrails(request, response);
+                queryTrails((HttpServletResponse) request, response); //changed first parameter request
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -71,8 +71,8 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         else if (tab_id.equals("1")) {
             System.out.println("Trail Condition Updated!");
             try {
-                updateConditions(request, response);
-            } catch (SQLException e) {
+                updateConditions((HttpServletResponse) request, response); //changed first parameter request
+            } catch (SQLException | JSONException e) {
                 e.printStackTrace();
             }
         }
@@ -81,8 +81,8 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         else if (tab_id.equals("2")) {
             System.out.println("A report is submitted!");
             try {
-                submitDamageReport(request, response);
-            } catch (SQLException e) {
+                submitDamageReport((HttpServletResponse) request, response);  //changed first parameter request
+            } catch (SQLException | JSONException e) {
                 e.printStackTrace();
             }
         }
