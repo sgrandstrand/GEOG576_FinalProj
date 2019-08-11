@@ -17,6 +17,36 @@
 		<!-- Google Map js libraries -->
 <%--		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&libraries=places"></script>--%>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyBsknU0BjvUqyd4Y78SK7WWrtKlJICo268&signed_in=true&libraries=places,visualization"></script>
+
+	<!--To autocomplete trails -->
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+		<script>
+			$(document).ready(function() {
+				$(function() {
+					$("#search").autocomplete({
+						source: function(request, response) {
+							$.ajax({
+								url: "HttpServlet",
+								type: "GET",
+								data: {
+									term: request.term
+								},
+								dataType: "json",
+								success: function(data) {
+									response(data);
+								}
+							});
+						}
+					});
+				});
+			});
+		</script>
+
+
+
 	</head>
 
 	<body>
@@ -39,6 +69,9 @@
 						<!-- Query Trails Tab Panel -->
 						<div class="tab-pane active" id="query_trails">
 							<form id = "query_trails_form">
+								<div><label >Trail:</label><input id="search" class = "search" type="text" placeholder = "Trail name here" name="name"</div>
+								<div><label>State:</label><input placeholder = "State" name="name"</div>
+								<div><label>County:</label><input placeholder = "State" name="name"</div>
 
 							</form>
 						</div>
@@ -73,7 +106,7 @@
 			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 			crossorigin="anonymous"></script>
 
-<%--        <script src="js/loadform.js"></script>--%>
+        <script src="js/loadform.js"></script>
         <script src="js/loadmap.js"></script>
 
 		<!-- Bootstrap -->
