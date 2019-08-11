@@ -38,14 +38,14 @@ function mapInitialization(trails) {
     var bounds = new google.maps.LatLngBounds ();
 
     // Add the marker image variables here --> NEED IMAGES
-    var green = '';
-    var greentoblue = '';
-    var greentoblack = '';
-    var blue = '';
-    var bluetoblack = '';
-    var black = '';
+    var green = 'img\\green.png';
+    var greentoblue = 'img\\greentoblue.png';
+    var greentoblack = 'img\\greentoblack.png';
+    var blue = 'img\\blue.png';
+    var bluetoblack = 'img\\bluetoblack.png';
+    var black = 'img\\black.png';
 
-    $.each(reports, function(i, e) {
+    $.each(trails, function(i, e) {
         var long = Number(e['longitude']);
         var lat = Number(e['latitude']);
         var latlng = new google.maps.LatLng(lat, long);
@@ -53,10 +53,66 @@ function mapInitialization(trails) {
         bounds.extend(latlng);
 
         // Create the infoWindow content here
-
+        var contentStr = '<h4>Trail Details</h4><hr>';
+            contentStr += '<p><b>' + 'Name' + ':</b>&nbsp' + e['trail_name'] + '</p>';
+            contentStr += '<p><b>' + 'County' + ':</b>&nbsp' + e['trail_county'] + '</p>';
+            contentStr += '<p><b>' + 'State' + ':</b>&nbsp' + e['trail_state'] + '</p>';
+            contentStr += '<p><b>' + 'Total Mileage' + ':</b>&nbsp' + e['trail_mileage'] + '</p>';
+            contentStr += '<p><b>' + 'Last Reported Condition' + ':</b>&nbsp' + e['trail_condition'] + '</p>';
+            contentStr += '<p><b>' + 'Difficulty Level' + ':</b>&nbsp' + e['trail_difficulty'] + '</p>';
+            contentStr += '<p><b>' + 'MORE Liason Contact Info' + ':</b>&nbsp' + e['trail_email'] + '</p>';
+            contentStr += '<p><b>' + 'MORE Information Page' + ':</b>&nbsp' + e['trail_website'] + '</p>';
+            contentStr += '<p><b>' + 'Coordinates' + ':</b>&nbsp' + e['trail_lat'] + ', ' + e['trail_long'] + '</p>';
 
         // Create the markers here
-
+        if (e['trail_difficulty'] == 'green') {
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: green,
+                customInfo: contentStr
+            });
+        }
+        else if (e['trail_difficulty'] == 'green to blue') {
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: greentoblue,
+                customInfo: contentStr
+            });
+        }
+        else if (e['trail_difficulty'] == 'green to black') {
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: greentoblack,
+                customInfo: contentStr
+            });
+        }
+        else if (e['trail_difficulty'] == 'blue') {
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: blue,
+                customInfo: contentStr
+            });
+        }
+        else if (e['trail_difficulty'] == 'blue to black') {
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: bluetoblack,
+                customInfo: contentStr
+            });
+        }
+        else if (e['trail_difficulty'] == 'black') {
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: black,
+                customInfo: contentStr
+            });
+        }
 
         // Add a Click Listener to the marker
         google.maps.event.addListener(marker, 'click', function() {

@@ -12,8 +12,8 @@ function queryTrails(event) {
         url: 'HttpServlet',
         type: 'POST',
         data: a,
-        success: function(reports) {
-            mapInitialization(reports);
+        success: function(trails) {
+            mapInitialization(trails);
         },
         error: function(xhr, status, error) {
             alert("Status: " + status + "\nError: " + error);
