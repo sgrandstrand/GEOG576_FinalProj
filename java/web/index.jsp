@@ -43,21 +43,21 @@
 							</form>
 						</div>
 
-						<!-- Update Conditions Tab Panel -->
-						<div class="tab-pane" id="update_conditions">
-							<form id = "update_conditions_form">
+<%--						<!-- Update Conditions Tab Panel -->--%>
+<%--						<div class="tab-pane" id="update_conditions">--%>
+<%--							<form id = "update_conditions_form">--%>
 
-							</form>
-						</div>
+<%--							</form>--%>
+<%--						</div>--%>
 
-						<!-- Submit Damage Report Tab Panel -->
-						<div class="tab-pane" id="submit_damage_report">
-							<form id = "submit_damage_report_form">
+<%--						<!-- Submit Damage Report Tab Panel -->--%>
+<%--						<div class="tab-pane" id="submit_damage_report">--%>
+<%--							<form id = "submit_damage_report_form">--%>
 
-							</form>
-						</div>
-					</div>
-				</div>
+<%--							</form>--%>
+<%--						</div>--%>
+<%--					</div>--%>
+<%--				</div>--%>
 
 				<div id="map-canvas" class="col-xs-8"></div>
 

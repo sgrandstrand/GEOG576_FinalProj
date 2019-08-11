@@ -14,14 +14,14 @@ public class DBUtility {
     // Establish connection --> Dev team -->  Uncomment out your specific PostgreSQL configuration below
 
     // Sarah
-   private static final String ConnUrl = "jdbc:postgresql://localhost:5432/trailmaint";
-    private static final String Username = "postgres";
-    private static final String Password = "postgres";
+//    private static final String ConnUrl = "jdbc:postgresql://localhost:5432/trailmaint";
+//    private static final String Username = "postgres";
+//    private static final String Password = "postgres";
 
     // Kevin
-//    private static final String ConnUrl = "jdbc:postgresql://localhost:5436/trailmaint";
- //   private static final String Username = "postgres";
-  //  private static final String Password = "password";
+    private static final String ConnUrl = "jdbc:postgresql://localhost:5436/trailmaint";
+    private static final String Username = "postgres";
+    private static final String Password = "password";
 
     // This is a constructor
     public DBUtility() {
@@ -42,6 +42,7 @@ public class DBUtility {
 
     // Execute a sql query (e.g. SELECT) and return a ResultSet
     public ResultSet queryDB(String sql) {
+        System.out.println("SQL query passed to trailmaint database:\n" + sql);
         Connection conn = connectDB();
         ResultSet res = null;
         try {
