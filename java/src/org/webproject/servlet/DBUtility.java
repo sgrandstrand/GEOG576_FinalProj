@@ -14,14 +14,23 @@ public class DBUtility {
     // Establish connection --> Dev team -->  Uncomment out your specific PostgreSQL configuration below
 
     // Sarah
+<<<<<<< Updated upstream
    private static final String ConnUrl = "jdbc:postgresql://localhost:5432/trailmaint";
+=======
+    private static final String ConnUrl = "jdbc:postgresql://localhost:5432/trailmaint";
+>>>>>>> Stashed changes
     private static final String Username = "postgres";
     private static final String Password = "postgres";
 
     // Kevin
 //    private static final String ConnUrl = "jdbc:postgresql://localhost:5436/trailmaint";
+<<<<<<< Updated upstream
  //   private static final String Username = "postgres";
   //  private static final String Password = "password";
+=======
+//    private static final String Username = "postgres";
+//    private static final String Password = "password";
+>>>>>>> Stashed changes
 
     // This is a constructor
     public DBUtility() {

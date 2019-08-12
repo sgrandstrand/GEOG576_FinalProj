@@ -2,7 +2,7 @@
 
 // Form function for querying the trails --> IN WORK
 function queryTrails(event) {
-    event.preventDefault(); // stop form from submitting normally
+     event.preventDefault(); // stop form from submitting normally
 
     var a = $("#query_trails_form").serializeArray();
     a.push({ name: "tab_id", value: "0" });
