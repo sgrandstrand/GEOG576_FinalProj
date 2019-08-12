@@ -172,6 +172,6 @@ function submitDamageReport(event) {
 // }
 //
 // //
-// $("#query_trails_form").on("submit",queryTrails());
+   $("#query_trails_form").on("submit",queryTrails());
 // $("#update_conditions_form").on("submit",updateConditions());
 // $("#submit_damage_report_form").on("submit",submitDamageReport());
