@@ -8,13 +8,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="database" qname="@">
-            <node kind="schema" qname="@" />
-          </node>
-        </introspection-scope>
-      </schema-mapping>
+      <introspection-schemas>@:@,information_schema,pg_catalog,pg_temp_1,pg_toast,pg_toast_temp_1</introspection-schemas>
     </data-source>
   </component>
 </project>

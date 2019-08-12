@@ -38,6 +38,7 @@ function mapInitialization(trails) {
     var bounds = new google.maps.LatLngBounds ();
 
     // Add the marker image variables here --> NEED IMAGES
+    var gray = 'img\\unknown.png'
     var green = 'img\\green.png';
     var greentoblue = 'img\\greentoblue.png';
     var greentoblack = 'img\\greentoblack.png';
@@ -46,8 +47,8 @@ function mapInitialization(trails) {
     var black = 'img\\black.png';
 
     $.each(trails, function(i, e) {
-        var long = Number(e['longitude']);
-        var lat = Number(e['latitude']);
+        var long = Number(e['trail_long']);
+        var lat = Number(e['trail_lat']);
         var latlng = new google.maps.LatLng(lat, long);
 
         bounds.extend(latlng);
@@ -65,12 +66,20 @@ function mapInitialization(trails) {
             contentStr += '<p><b>' + 'Coordinates' + ':</b>&nbsp' + e['trail_lat'] + ', ' + e['trail_long'] + '</p>';
 
         // Create the markers here
-        if (e['trail_difficulty'] == 'green') {
+        if (e['trail_difficulty'] == null) {
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: gray,
+                customInfo: contentStr,
+            });
+        }
+        else if (e['trail_difficulty'] == 'green') {
             var marker = new google.maps.Marker({
                 position: latlng,
                 map: map,
                 icon: green,
-                customInfo: contentStr
+                customInfo: contentStr,
             });
         }
         else if (e['trail_difficulty'] == 'green to blue') {
@@ -78,7 +87,7 @@ function mapInitialization(trails) {
                 position: latlng,
                 map: map,
                 icon: greentoblue,
-                customInfo: contentStr
+                customInfo: contentStr,
             });
         }
         else if (e['trail_difficulty'] == 'green to black') {
@@ -86,7 +95,7 @@ function mapInitialization(trails) {
                 position: latlng,
                 map: map,
                 icon: greentoblack,
-                customInfo: contentStr
+                customInfo: contentStr,
             });
         }
         else if (e['trail_difficulty'] == 'blue') {
@@ -94,7 +103,7 @@ function mapInitialization(trails) {
                 position: latlng,
                 map: map,
                 icon: blue,
-                customInfo: contentStr
+                customInfo: contentStr,
             });
         }
         else if (e['trail_difficulty'] == 'blue to black') {
@@ -102,7 +111,7 @@ function mapInitialization(trails) {
                 position: latlng,
                 map: map,
                 icon: bluetoblack,
-                customInfo: contentStr
+                customInfo: contentStr,
             });
         }
         else if (e['trail_difficulty'] == 'black') {
@@ -110,7 +119,7 @@ function mapInitialization(trails) {
                 position: latlng,
                 map: map,
                 icon: black,
-                customInfo: contentStr
+                customInfo: contentStr,
             });
         }
 
