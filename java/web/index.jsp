@@ -1,35 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-		 pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
 		<title>MORE Trails Portal</title>
 
 		<!-- Custom styles -->
 		<link rel="stylesheet" href="css/style.css">
-
-		<!-- JQuery -->
-		<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script src="//code.jquery.com/jquery-migrate-3.1.0.min.js"></script>
-
-		<!-- Popper -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-				integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-				crossorigin="anonymous"></script>
-
-		<!-- Bootstrap CSS -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous">
+    </script>
+    <!-- jQuery Migrate -->
+    <script src="https://code.jquery.com/jquery-migrate-3.1.0.min.js"
+         integrity="sha256-ycJeXbll9m7dHKeaPbXBkZH8BuP99SmPm/8q5O+SbBc="
+         crossorigin="anonymous">
+     </script>
+   <!-- Popper -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>    
+		
+    <!-- Bootstrap -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<%--		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">--%>
-		<!-- Bootstrap -->
-				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<%--		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>--%>
 
 		<!-- Google Map js libraries -->
 		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE8&libraries=places"></script>
-	
 
+		<!-- Google Map js libraries -->
+<!--        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=YOURKEYHERE&libraries=places"></script>  -->
 
 	</head>
 
@@ -40,7 +43,8 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="sidebar col-xs-4">
+
+				<div class="sidebar col-xs-3">
 					<!-- Tab Nav -->
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#query_trails" data-toggle="tab">Find Trails to Ride</a></li>
@@ -136,21 +140,20 @@
 						<div class="tab-pane" id="submit_damage_report">
 							<form id = "submit_damage_report_form">
 
-<<<<<<< Updated upstream
+
 							</form>
 						</div>
-=======
+
 <%--							</form>--%>
 <%--						</div>--%>
->>>>>>> Stashed changes
+
 					</div>
 				</div>
 
-				<div id="map-canvas" class="col-xs-8"></div>
+				<div id="map-canvas" class="col-xs-9"></div>
 
 			</div>
 		</div>
-
 
         <script src="js/loadform.js"></script>
         <script src="js/loadmap.js"></script>
