@@ -38,13 +38,20 @@ function mapInitialization(trails) {
     var bounds = new google.maps.LatLngBounds ();
 
     // Add the marker image variables here --> NEED IMAGES
-    var gray = 'img\\unknown.png'
-    var green = 'img\\green.png';
-    var greentoblue = 'img\\greentoblue.png';
-    var greentoblack = 'img\\greentoblack.png';
-    var blue = 'img\\blue.png';
-    var bluetoblack = 'img\\bluetoblack.png';
-    var black = 'img\\black.png';
+    var green = 'img/green.png';
+    var greentoblue = 'img/greentoblue.png';
+    var greentoblack = 'img/greentoblack.png';
+    var blue = 'img/blue.png';
+    var bluetoblack = 'img/bluetoblack.png';
+    var black = 'img/black.png';
+
+//    var gray = 'img\\unknown.png'
+//    var green = 'img\\green.png';
+//    var greentoblue = 'img\\greentoblue.png';
+//    var greentoblack = 'img\\greentoblack.png';
+//    var blue = 'img\\blue.png';
+//    var bluetoblack = 'img\\bluetoblack.png';
+//    var black = 'img\\black.png';
 
     $.each(trails, function(i, e) {
         var long = Number(e['trail_long']);

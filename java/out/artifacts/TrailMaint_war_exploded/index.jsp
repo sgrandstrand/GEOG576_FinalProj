@@ -5,12 +5,34 @@
 
 		<!-- Custom styles -->
 		<link rel="stylesheet" href="css/style.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+    <!-- jQuery -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous">
+      </script>
+    
+     <!-- jQuery Migrate -->
+        <script src="https://code.jquery.com/jquery-migrate-3.1.0.min.js"
+                integrity="sha256-ycJeXbll9m7dHKeaPbXBkZH8BuP99SmPm/8q5O+SbBc="
+                crossorigin="anonymous">
+        </script>
+     <!-- Popper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
 
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+<%--		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">--%>
+		<!-- Bootstrap -->
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<%--		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>--%>
+
 		<!-- Google Map js libraries -->
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBV5433I2APerSTDOz6c5WqFW0Y7IQl8xQ&libraries=places"></script>
+		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsknU0BjvUqyd4Y78SK7WWrtKlJICo268&libraries=places"></script>
 
 	</head>
 
@@ -101,6 +123,11 @@
 										<option value="Black">black</option>
 									</select>
 								</div>
+
+								<div><label>Address:</label>
+									<input id="autocomplete" placeholder="Address" >
+								</div>
+
 							</form>
 						</div>
 
@@ -115,8 +142,13 @@
 						<div class="tab-pane" id="submit_damage_report">
 							<form id = "submit_damage_report_form">
 
+
 							</form>
 						</div>
+
+<%--							</form>--%>
+<%--						</div>--%>
+
 					</div>
 				</div>
 
@@ -125,27 +157,8 @@
 			</div>
 		</div>
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-                crossorigin="anonymous">
-        </script>
-        <!-- jQuery Migrate -->
-        <script src="https://code.jquery.com/jquery-migrate-3.1.0.min.js"
-                integrity="sha256-ycJeXbll9m7dHKeaPbXBkZH8BuP99SmPm/8q5O+SbBc="
-                crossorigin="anonymous">
-        </script>
-        <!-- Popper -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-
         <script src="js/loadform.js"></script>
         <script src="js/loadmap.js"></script>
-
-		<!-- Bootstrap -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	</body>
 </html>

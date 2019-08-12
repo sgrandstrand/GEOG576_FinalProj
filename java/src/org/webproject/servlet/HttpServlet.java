@@ -61,7 +61,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         // Query trails
         if (tab_id.equals("0")) {
             try {
-                queryTrails(request, response); //changed first parameter request
+                queryTrails(request, response);
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
