@@ -37,22 +37,6 @@ function mapInitialization(trails) {
 
     var bounds = new google.maps.LatLngBounds ();
 
-    // Add the marker image variables here --> NEED IMAGES
-    var green = 'img/green.png';
-    var greentoblue = 'img/greentoblue.png';
-    var greentoblack = 'img/greentoblack.png';
-    var blue = 'img/blue.png';
-    var bluetoblack = 'img/bluetoblack.png';
-    var black = 'img/black.png';
-
-//    var gray = 'img\\unknown.png'
-//    var green = 'img\\green.png';
-//    var greentoblue = 'img\\greentoblue.png';
-//    var greentoblack = 'img\\greentoblack.png';
-//    var blue = 'img\\blue.png';
-//    var bluetoblack = 'img\\bluetoblack.png';
-//    var black = 'img\\black.png';
-
     $.each(trails, function(i, e) {
         var long = Number(e['trail_long']);
         var lat = Number(e['trail_lat']);
@@ -72,63 +56,50 @@ function mapInitialization(trails) {
             contentStr += '<p><b>' + 'MORE Information Page' + ':</b>&nbsp' + e['trail_website'] + '</p>';
             contentStr += '<p><b>' + 'Coordinates' + ':</b>&nbsp' + e['trail_lat'] + ', ' + e['trail_long'] + '</p>';
 
-        // Create the markers here
-        if (e['trail_difficulty'] == null) {
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: gray,
-                customInfo: contentStr,
-            });
-        }
-        else if (e['trail_difficulty'] == 'green') {
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: green,
-                customInfo: contentStr,
-            });
-        }
-        else if (e['trail_difficulty'] == 'green to blue') {
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: greentoblue,
-                customInfo: contentStr,
-            });
-        }
-        else if (e['trail_difficulty'] == 'green to black') {
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: greentoblack,
-                customInfo: contentStr,
-            });
-        }
-        else if (e['trail_difficulty'] == 'blue') {
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: blue,
-                customInfo: contentStr,
-            });
-        }
-        else if (e['trail_difficulty'] == 'blue to black') {
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: bluetoblack,
-                customInfo: contentStr,
-            });
-        }
-        else if (e['trail_difficulty'] == 'black') {
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: black,
-                customInfo: contentStr,
-            });
-        }
+        // Add the marker image variables here
+        var icons = {
+            null: {
+                url: 'img/unknown.png',
+                scaledSize: new google.maps.Size(25,25)
+            },
+            green: {
+                url:'img/green.png',
+                scaledSize: new google.maps.Size(25,25)
+             },
+            greentoblue: {
+                url:'img/greentoblue.png',
+                scaledSize: new google.maps.Size(25,25)
+            },
+            greentoblack: {
+                url:'img/greentoblack.png',
+                scaledSize: new google.maps.Size(25,25)
+            },
+            blue: {
+                url:'img/blue.png',
+                scaledSize: new google.maps.Size(25,25)
+            },
+            bluetoblack: {
+                url:'img/bluetoblack.png',
+                scaledSize: new google.maps.Size(25,25)
+            },
+            black: {
+                url:'img/black.png',
+                    scaledSize: new google.maps.Size(25,25)
+            }
+        };
+
+        var str = e['trail_difficulty'];
+        if (str == null) {
+            str = "null";
+        } else
+        str = str.replace(/\s/g,'');
+
+        var marker = new google.maps.Marker({
+            position: latlng,
+            icon: icons[str],
+            map: map,
+            customInfo: contentStr
+        });
 
         // Add a Click Listener to the marker
         google.maps.event.addListener(marker, 'click', function() {

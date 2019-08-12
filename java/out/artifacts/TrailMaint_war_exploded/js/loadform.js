@@ -1,5 +1,6 @@
 // Javascript file for loading the form content
 
+
 // Form function for querying the trails --> IN WORK
 function queryTrails(event) {
      event.preventDefault(); // stop form from submitting normally
