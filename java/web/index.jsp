@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 		<!-- Google Map js libraries -->
-		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsknU0BjvUqyd4Y78SK7WWrtKlJICo268&libraries=places"></script>
+		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&libraries=places"></script>
 
 		<!-- Google Map js libraries -->
 <!--        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=YOURKEYHERE&libraries=places"></script>  -->
