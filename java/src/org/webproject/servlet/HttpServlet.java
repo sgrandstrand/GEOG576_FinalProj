@@ -156,7 +156,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             if (county != null) {
                 String where_county = "county.name = '" + county + "'";
                 if (name != null) {
-                    sql += "AND" + where_county;
+                    sql += "AND " + where_county;
                 }
                 else {
                     sql += where_county;
@@ -166,7 +166,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             if (state != null) {
                 String where_state = "state.name = '" + state + "'";
                 if (name != null || county != null) {
-                    sql += "AND" + where_state;
+                    sql += "AND " + where_state;
                 }
                 else {
                     sql += where_state;
@@ -176,7 +176,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             if (mileage != null) {
                 String where_mileage = "trail.mileage " + mileage;
                 if (name != null || county != null || state != null) {
-                    sql += "AND" + where_mileage;
+                    sql += "AND " + where_mileage;
                 }
                 else {
                     sql += where_mileage;
@@ -184,9 +184,9 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             }
             // If condition is not null, add condition to WHERE clause
             if (condition != null) {
-                String where_condition = "trail.condition = '" + condition + "'";
+                String where_condition = "trail.condition_status = '" + condition + "'";
                 if (name != null || county != null || state != null || mileage != null) {
-                    sql += "AND" + where_condition;
+                    sql += "AND " + where_condition;
                 }
                 else {
                     sql += where_condition;
@@ -194,9 +194,9 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             }
             // If difficulty is not null, add difficulty to WHERE clause
             if (difficulty != null) {
-                String where_difficulty = "trail.difficulty = '" + difficulty + "'";
+                String where_difficulty = "trail.difficulty_level = '" + difficulty + "'";
                 if (name != null || county != null || state != null || mileage != null || condition != null) {
-                    sql += "AND" + where_difficulty;
+                    sql += "AND " + where_difficulty;
                 }
                 else {
                     sql += where_difficulty;
