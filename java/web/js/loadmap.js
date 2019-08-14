@@ -84,7 +84,7 @@ function mapInitialization(trails) {
             },
             black: {
                 url:'img/black.png',
-                    scaledSize: new google.maps.Size(25,25)
+                scaledSize: new google.maps.Size(25,25)
             }
         };
 
