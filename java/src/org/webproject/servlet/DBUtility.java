@@ -20,8 +20,18 @@ public class DBUtility {
 
     // Kevin
 //    private static final String ConnUrl = "jdbc:postgresql://localhost:5436/trailmaint";
+<<<<<<< Updated upstream
  //   private static final String Username = "postgres";
   //  private static final String Password = "password";
+=======
+//    private static final String Username = "postgres";
+//    private static final String Password = "password";
+
+    //Megan
+//    private static final String ConnUrl= "jdbc:postgresql://localhost:5432/trailmaint";
+//    private static final String Username = "postgres";
+//    private static final String Password = "BeTheCowboy";
+>>>>>>> Stashed changes
 
     // This is a constructor
     public DBUtility() {

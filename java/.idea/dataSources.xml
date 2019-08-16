@@ -5,8 +5,13 @@
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+<<<<<<< Updated upstream
      <jdbc-url>jdbc:postgresql://localhost:5432/trailmaint</jdbc-url>
       <!--    <jdbc-url>jdbc:postgresql://localhost:5436/trailmaint</jdbc-url> -->
+=======
+<!--      <jdbc-url>jdbc:postgresql://localhost:5432/trailmaint</jdbc-url>-->
+<!--      <jdbc-url>jdbc:postgresql://localhost:5436/trailmaint</jdbc-url>-->
+>>>>>>> Stashed changes
        </data-source>
      </component>
    </project>
