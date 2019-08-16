@@ -6,7 +6,7 @@
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
 <!--      <jdbc-url>jdbc:postgresql://localhost:5432/trailmaint</jdbc-url>-->
-      <jdbc-url>jdbc:postgresql://localhost:5436/trailmaint</jdbc-url>
+<!--      <jdbc-url>jdbc:postgresql://localhost:5436/trailmaint</jdbc-url>-->
        </data-source>
      </component>
    </project>

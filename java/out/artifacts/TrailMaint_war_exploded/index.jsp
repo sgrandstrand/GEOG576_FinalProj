@@ -32,10 +32,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 		<!-- Google Map js libraries -->
-		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZghaQyKVgf7TLwq3tTuSzPho9SWlDNQw&libraries=places"></script>
-
-		<!-- Google Map js libraries -->
-<%--        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDZghaQyKVgf7TLwq3tTuSzPho9SWlDNQw&libraries=places"></script>--%>
+		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsknU0BjvUqyd4Y78SK7WWrtKlJICo268&libraries=places"></script>
 
 	</head>
 
@@ -196,6 +193,9 @@
 									<span class="glyphicon glyphicon-star"></span> Submit the report
 								</button>
 							</form>
+						</div>
+						<div><p id="toggle-text"> Damage Report Locations <label class="switch"
+							id="toggle-switch"><input type="checkbox"><span class="slider round"></span></label></p>
 						</div>
 					</div>
 				</div>

@@ -26,3 +26,12 @@ SET geom = ST_GeomFromText('POINT(' || longitude || ' ' || latitude || ')',4326)
 -- If you get an error check the report_num value, could be different
 
 \COPY damage_report (report_num, damage_type) FROM '/Users/sarah/Documents/GEOG576/FInalProj/GEOG576_FinalProj/Data/dummydamagereport.csv' WITH (FORMAT CSV, HEADER);
+
+
+-- need to add enum report type to report table 
+ALTER TABLE report ADD COLUMN report_type report_intent; 
+
+-- add the report types to the report table 
+UPDATE report SET report_type = 'status' WHERE latitude IS NULL;
+
+UPDATE report SET report_type = 'damage' WHERE report_type IS NULL;

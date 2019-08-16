@@ -20,8 +20,8 @@ public class JDBCDemo {
 //            conn = DriverManager.getConnection(url, "postgres", "postgres");
 
             // Kevin
-            String url = "jdbc:postgresql://localhost:5436/trailmaint";
-            conn = DriverManager.getConnection(url, "postgres", "password");
+//            String url = "jdbc:postgresql://localhost:5436/trailmaint";
+//            conn = DriverManager.getConnection(url, "postgres", "password");
 
             // Query the database
             String sql = "select trailID, name, countyID, stateID, mileage, condition_status, difficulty_level, " +

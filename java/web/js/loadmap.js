@@ -137,3 +137,4 @@ function onPlaceChanged() {
 
 //Execute our 'initialization' function once the page has loaded.
 google.maps.event.addDomListener(window, 'load', initialization);
+

@@ -14,7 +14,7 @@ function queryTrails(event) {
         data: a,
         success: function(trails) {
             mapInitialization(trails);
-            $("#query_trails_form")[0].reset();
+           // $("#query_trails_form")[0].reset();
         },
         error: function(xhr, status, error) {
             alert("Status: " + status + "\nError: " + error);
@@ -84,7 +84,43 @@ function submitDamageReport(event) {
         }
     });
 }
+function showDamageReports(event) {
+    event.preventDefault(); // stop from from submitting normally
+
+    var a = $("#show_damage_reports").serializeArray();
+
+    // Set the lat/long to the place selected --> use place.geometry.location.lng() and place.geometry.location.lat()
+    lat = place.geometry.location.lat();
+    long = place.geometry.location.lng();
+
+    a.push({ name: "latitude", value: lat});
+    a.push({ name: "longitude", value: long});
+
+    a.push({ name: "tab_id", value: "2" });
+    a = a.filter(function(item){return item.value != '';});
+    console.log(a);
+    $.ajax({
+        url: 'HttpServlet',
+        type: 'POST',
+        data: a,
+        success: function() {
+            //Alert the user that everything worked
+            alert("The report is successfully submitted!");
+
+            // Reset the form
+            $("#submit_damage_report_form")[0].reset();
+
+            // Reload the map with all markers including the new one
+            showAllTrails();
+        },
+        error: function(xhr, status, error) {
+            alert("Status: " + status + "\nError: " + error);
+        }
+    });
+
+}
 
 $("#query_trails_form").on("submit",queryTrails);
 // $("#update_conditions_form").on("submit",updateConditions);
 $("#submit_damage_report_form").on("submit",submitDamageReport);
+//$("#show_damage_reports").on(onclick, toggle-switch)

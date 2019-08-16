@@ -67,6 +67,14 @@
 <%--								</div>--%>
 								<div><label>Find Trails to Ride</label></div>
 								<br>
+								<div><label>State:</label>
+									<select name="state">
+										<option value="">Choose State</option>
+										<option value="District of Columbia">District of Columbia</option>
+										<option value="Virginia">Virginia</option>
+										<option value="Maryland">Maryland</option>
+									</select>
+								</div>
 								<div><label>County:</label>
 									<select name="county">
 										<option value="">Choose County</option>
@@ -85,14 +93,6 @@
 										<option value="Washington">Washington</option>
 										<option value="Baltimore City">Baltimore City</option>
 										<option value="Queen Anne's">Queen Anne's</option>
-									</select>
-								</div>
-								<div><label>State:</label>
-									<select name="state">
-										<option value="">Choose State</option>
-										<option value="District of Columbia">District of Columbia</option>
-										<option value="Virginia">Virginia</option>
-										<option value="Maryland">Maryland</option>
 									</select>
 								</div>
 								<div><label>Mileage:</label>
@@ -193,6 +193,9 @@
 									<span class="glyphicon glyphicon-star"></span> Submit the report
 								</button>
 							</form>
+						</div>
+						<div id="toggle-damage"><p id="toggle-text"> Damage Report Locations <label class="switch"
+							id="toggle-switch"><input type="checkbox"><span class="slider round"></span></label></p>
 						</div>
 					</div>
 				</div>

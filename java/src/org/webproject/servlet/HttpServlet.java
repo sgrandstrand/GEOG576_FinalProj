@@ -82,14 +82,14 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 //        }
 
         // Submit a damage report
-//        else if (tab_id.equals("2")) {
-//            System.out.println("A report is submitted!");
-//            try {
-//                submitDamageReport((HttpServletResponse) request, response);  //changed first parameter request
-//            } catch (SQLException | JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
+        else if (tab_id.equals("2")) {
+            System.out.println("A report is submitted!");
+            try {
+                submitDamageReport((HttpServletResponse) request, response);
+            } catch (SQLException | JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -241,12 +241,43 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 
 
     // Function to submit damage reports
-//    private void submitDamageReport(HttpServletResponse request, HttpServletResponse response) throws
-//            JSONException, SQLException, IOException {
-//
+    private void submitDamageReport(HttpServletResponse request, HttpServletResponse response) throws
+            JSONException, SQLException, IOException {
+        DBUtility dbutil = new DBUtility();
+        String sql;
+
+
+
 //        // Add code to create a damage report
-//
-//    }
+        // 1. create report
+        int report_id = 0;
+        String fN = request.getParameter("fN");
+        String lN = request.getParameter("lN");
+        String damage_date = request.getParameter("damage_date");
+        String user_email = request.getParameter("user_email");
+        String trail = request.getParameter("trail");
+        String message = request.getParameter("message");
+        String lon = request.getParameter("longitude");
+        String lat = request.getParameter("latitude");
+        if (fN != null) {fN = "'" + fN + "'";}
+        if (lN != null) {lN = "'" + lN + "'";}
+        if (damage_date != null) {damage_date = "'" + damage_date + "'";}
+        if (user_email != null) {user_email = "'" + user_email + "'";}
+
+
+        //record report_id
+        ResultSet res_2 = dbutil.queryDB("select last_value from report_id_seq");
+        res_2.next();
+        report_id = res_2.getInt(1);
+
+        sql = "insert into report (id, first_name, last_name, trail_ID, date_, email, message, report_type, geom," +
+                " message) values (" + report_id + "," + fN + "," + lN + "," + trail + "," + damage_date + "," + user_email + "," + message + ","
+                + "damage" + ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326)" + ")";
+        dbutil.modifyDB(sql);
+
+        // 2. create damage report
+
+    }
 
     public void main() throws JSONException {
     }
