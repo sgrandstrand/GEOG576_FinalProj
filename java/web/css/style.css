@@ -92,3 +92,7 @@ input:checked + .slider:before {
     position: absolute;
     right:0;
 }
+/*popup test*/
+.gm-style .gm-style-iw-c {
+    font-family: "Times New Roman";
+}
