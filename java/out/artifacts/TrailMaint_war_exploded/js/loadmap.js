@@ -5,6 +5,9 @@ var place;
 var autocomplete;
 var infowindow = new google.maps.InfoWindow();
 
+var trail_markers = [];
+var damage_markers = [];
+
 // Function to initialize the page
 function initialization() {
     showAllTrails();
@@ -103,6 +106,8 @@ function mapInitialization(trails) {
             customInfo: contentStr
         });
 
+        trail_markers.push(marker);
+
         // Add a Click Listener to the marker
         google.maps.event.addListener(marker, 'click', function() {
         // use 'customInfo' to customize infoWindow
@@ -145,7 +150,7 @@ function onDamageReports(damageReports) {
         // Add the marker image variables here
         var icons = {
             url: 'img/damage.png',
-            scaledSize: new google.maps.Size(25,25)
+            scaledSize: new google.maps.Size(20,20)
         };
 
         var marker = new google.maps.Marker({
@@ -155,6 +160,8 @@ function onDamageReports(damageReports) {
             customInfo: contentStr
         });
 
+        damage_markers.push(marker);
+
         // Add a Click Listener to the marker
         google.maps.event.addListener(marker, 'click', function() {
             // use 'customInfo' to customize infoWindow
@@ -163,6 +170,42 @@ function onDamageReports(damageReports) {
         });
     });
 }
+
+// // Function to remove the trail markers
+// function removeTrailMarkers(trail_markers) {
+//     for (i=0; i<trail_markers.length; i++) {
+//         trail_markers[i].setMap(null);
+//     }
+// }
+//
+// // Calls the toggle switch to add or remove trails layer if checked or not
+// $(document).ready(function () {
+//     $('input[type="checkbox"]').click(function () {
+//         if ($(this).is(":checked")) {
+//             showAllTrails();
+//         } else if ($(this).is(":not(:checked)")) {
+//             removeTrailMarkers(trail_markers);
+//         }
+//     });
+// });
+
+// Function to remove the damage markers
+function removeDamageMarkers(damage_markers) {
+    for (i=0; i<damage_markers.length; i++) {
+        damage_markers[i].setMap(null);
+    }
+}
+
+// Calls the toggle switch to add or remove damages layer if checked or not
+$(document).ready(function () {
+    $('input[type="checkbox"]').click(function () {
+        if ($(this).is(":checked")) {
+            showDamageReports();
+        } else if ($(this).is(":not(:checked)")) {
+            removeDamageMarkers(damage_markers);
+        }
+    });
+});
 
 // Function to create autocomplete
 function initAutocomplete() {
@@ -176,7 +219,7 @@ function initAutocomplete() {
 // Function to change the location/view of the map
 function onPlaceChanged() {
     var address = new google.maps.Marker({
-        map: map,
+        map: map
     });
     address.setVisible(false);
     place = autocomplete.getPlace();
@@ -187,14 +230,3 @@ function onPlaceChanged() {
 
 // Execute our 'initialization' function once the page has loaded.
 google.maps.event.addDomListener(window, 'load', initialization);
-
-//calls the toggle switch to add or remove damages layer if checked or not
-$(document).ready(function () {
-    $('input[type="checkbox"]').click(function () {
-        if ($(this).is(":checked")) {
-            showDamageReports();
-        } else if ($(this).is(":not(:checked)")) {
-            onDamageReports(null);   // I might need to create a function to remove markers not just pass null value...
-        }
-    });
-});
