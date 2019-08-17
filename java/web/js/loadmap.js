@@ -45,8 +45,9 @@ function mapInitialization(trails) {
         bounds.extend(latlng);
 
         // Create the infoWindow content here
-        var contentStr = '<h4>Trail Details</h4><hr>';
-            contentStr += '<p><b>' + 'Name' + ':</b>&nbsp' + e['trail_name'] + '</p>';
+        //var contentStr = '<h4>Trail Details</h4><hr>';
+        var contentStr = '<h4>'+ e['trail_name']+'</h4>';
+            //contentStr += '<p><b>' + 'Name' + ':</b>&nbsp' + e['trail_name'] + '</p>';
             contentStr += '<p><b>' + 'County' + ':</b>&nbsp' + e['trail_county'] + '</p>';
             contentStr += '<p><b>' + 'State' + ':</b>&nbsp' + e['trail_state'] + '</p>';
             contentStr += '<p><b>' + 'Total Mileage' + ':</b>&nbsp' + e['trail_mileage'] + '</p>';

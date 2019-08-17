@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 		<!-- Google Map js libraries -->
-		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&libraries=places"></script>
+		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKgLQh1f9VafNWPeqn_Fra6pQ9fXbO2Cs&libraries=places"></script>
 
 	</head>
 
