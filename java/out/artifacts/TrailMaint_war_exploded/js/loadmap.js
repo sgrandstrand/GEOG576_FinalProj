@@ -32,7 +32,7 @@ function showAllTrails() {
 // Function to initialize the map
 function mapInitialization(trails) {
     var mapOptions = {
-        mapTypeId : google.maps.MapTypeId.ROADMAP // Set the type of Map
+        mapTypeId : google.maps.MapTypeId.TERRAIN // Set the type of Map
     };
 
     // Render the map within the empty div
