@@ -17,8 +17,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.webproject.servlet.DBUtility;
-
 /**
  * Servlet implementation class HttpServlet
  */
@@ -74,7 +72,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         // Update trail condition
         else if (tab_id.equals("1")) {
             try {
-                updateConditions(request, response); //changed first parameter request
+                updateConditions(request, response);
                 System.out.println("Trail Condition Updated!");
             } catch (SQLException | JSONException e) {
                 e.printStackTrace();
@@ -82,16 +80,16 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         }
 
 //        // Submit a damage report
-        else if (tab_id.equals("2")) {
-            System.out.println("A damage report is submitted!");
-            try {
-                submitDamageReport(request, response);
-            } catch (SQLException | JSONException e) {
-                e.printStackTrace();
-            }
-        }
+//        else if (tab_id.equals("2")) {
+//            try {
+//                submitDamageReport(request, response);
+//                System.out.println("A damage report is submitted!");
+//            } catch (SQLException | JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
-//        // Query/show damage reports
+        // Query damage reports
         else if (tab_id.equals("3")) {
             try {
                 queryDamageReports(request, response);
@@ -304,57 +302,58 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 
 
 //    // Function to submit damage reports
-    private void submitDamageReport(HttpServletRequest request, HttpServletResponse response) throws
-            JSONException, SQLException, IOException {
-        DBUtility dbutil = new DBUtility();
-        String sql;
-
-        // Code to create a damage report
-
-        // 1. create report
-        int report_id = 0;
-        String fN = request.getParameter("fN");
-        String lN = request.getParameter("lN");
-        String damage_date = request.getParameter("damage_date");
-        String user_email = request.getParameter("user_email");
-        String trail = request.getParameter("trail");
-        String message = request.getParameter("message");
-        String lon = request.getParameter("longitude");
-        String lat = request.getParameter("latitude");
-        if (fN != null) {fN = "'" + fN + "'";}
-        if (lN != null) {lN = "'" + lN + "'";}
-        if (damage_date != null) {damage_date = "'" + damage_date + "'";}
-        if (user_email != null) {user_email = "'" + user_email + "'";}
-
-        // Record report_id
-        ResultSet res_2 = dbutil.queryDB("select last_value from report_id_seq");
-        res_2.next();
-        report_id = res_2.getInt(1);
-
-        sql = "insert into report (id, first_name, last_name, trail_ID, date_, email, message, report_type, geom," +
-                " message) values (" + report_id + "," + fN + "," + lN + "," + trail + "," + damage_date + "," + user_email + "," + message + ","
-                + "damage" + ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326)" + ")";
-        dbutil.modifyDB(sql);
-
-        // 2. create damage report
-        String damage_type = request.getParameter("damage");
-
-        sql = "insert into damage_report (report_num, damage_type) values (" + report_id + "," + damage_type + ")";
-        dbutil.modifyDB(sql);
-
-
-        // Response that the report submission is successful
-        JSONObject data = new JSONObject();
-        try {
-            data.put("status", "success");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        response.getWriter().write(data.toString());
-
-    }
+//    private void submitDamageReport(HttpServletRequest request, HttpServletResponse response) throws
+//            JSONException, SQLException, IOException {
+//        DBUtility dbutil = new DBUtility();
+//        String sql;
+//
+//        // Code to create a damage report
+//
+//        // 1. create report
+//        int report_id = 0;
+//        String fN = request.getParameter("fN");
+//        String lN = request.getParameter("lN");
+//        String damage_date = request.getParameter("damage_date");
+//        String user_email = request.getParameter("user_email");
+//        String trail = request.getParameter("trail");
+//        String message = request.getParameter("message");
+//        String lon = request.getParameter("longitude");
+//        String lat = request.getParameter("latitude");
+//        if (fN != null) {fN = "'" + fN + "'";}
+//        if (lN != null) {lN = "'" + lN + "'";}
+//        if (damage_date != null) {damage_date = "'" + damage_date + "'";}
+//        if (user_email != null) {user_email = "'" + user_email + "'";}
+//
+//        // Record report_id
+//        ResultSet res_2 = dbutil.queryDB("select last_value from report_id_seq");
+//        res_2.next();
+//        report_id = res_2.getInt(1);
+//
+//        sql = "insert into report (id, first_name, last_name, trail_ID, date_, email, message, report_type, geom," +
+//                " message) values (" + report_id + "," + fN + "," + lN + "," + trail + "," + damage_date + "," + user_email + "," + message + ","
+//                + "damage" + ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326)" + ")";
+//        dbutil.modifyDB(sql);
+//
+//        // 2. create damage report
+//        String damage_type = request.getParameter("damage");
+//
+//        sql = "insert into damage_report (report_num, damage_type) values (" + report_id + "," + damage_type + ")";
+//        dbutil.modifyDB(sql);
+//
+//
+//        // Response that the report submission is successful
+//        JSONObject data = new JSONObject();
+//        try {
+//            data.put("status", "success");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        response.getWriter().write(data.toString());
+//
+//    }
 
     // Function to create query damageReports SQL statement and return list of damage reports
+    // NEED TO FINISH //Since we aren't querying from input just a click event do I need this?
     private void queryDamageReports(HttpServletRequest request, HttpServletResponse response) throws
             JSONException, SQLException, IOException {
         JSONArray list = new JSONArray();
@@ -363,7 +362,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 
         // SQL to find parameters for Damage reports
         String sql =
-                "Select report.id, trail.name as trail, date_, report.message, damage_report.damage_type," +
+                "Select report.id, trail.name as trail, date_, report.message, damage_report.damage_type, " +
                     "ST_Y(report.geom) as latitude, ST_X(report.geom) as longitude\n" +
                     "FROM report\n" +
                     "INNER JOIN damage_report ON damage_report.report_num = report.id\n" +
@@ -390,6 +389,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         // Print out the "list" JSON array in the server console --> Used for development/debugging only
         System.out.println("Records returned from trailmaint database:\n" + list);
 
+        response.getWriter().write(list.toString());
     }
 
     public void main() throws JSONException {
