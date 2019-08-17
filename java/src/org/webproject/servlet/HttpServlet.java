@@ -72,21 +72,34 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         }
 
 //        // Update trail condition
-////        else if (tab_id.equals("1")) {
-////            System.out.println("Trail Condition Updated!");
-////            try {
-////                updateConditions((HttpServletResponse) request, response); //changed first parameter request
-////            } catch (SQLException | JSONException e) {
-////                e.printStackTrace();
-////            }
-////        }
+//        else if (tab_id.equals("1")) {
+//            System.out.println("Trail Condition Updated!");
+//            try {
+//                updateConditions(request, response); //changed first parameter request
+//            } catch (SQLException | JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
 //
 //        // Submit a damage report
 //        else if (tab_id.equals("2")) {
-//            System.out.println("A report is submitted!");
+//            System.out.println("A damage report is submitted!");
 //            try {
-//                submitDamageReport((HttpServletResponse) request, response);
+//                submitDamageReport(request, response);
 //            } catch (SQLException | JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        // Query/show damage reports
+//        else if (tab_id.equals("3")) {
+//            try {
+//                queryDamageReports(request, response);
+//            } catch (JSONException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            } catch (SQLException e) {
+//                // TODO Auto-generated catch block
 //                e.printStackTrace();
 //            }
 //        }
@@ -229,26 +242,64 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
     }
 
 
-    // Function to submit condition reports and update trail conditions
-//    private void updateConditions(HttpServletResponse request, HttpServletResponse response) throws
+//    // Function to submit condition reports and update trail conditions
+//    private void updateConditions(HttpServletRequest request, HttpServletResponse response) throws
 //            JSONException, SQLException, IOException {
+//        DBUtility dbutil = new DBUtility();
+//        String sql = "";
 //
-//        // Add code to create a condition report
+//        // Add code to create a condition report and update the trail status
+//
+//        // Declare parameters as variables
+//        Integer trail_id = request.getParameter("trail_id");
+//        String first_name = request.getParameter("first_name");
+//        String last_name = request.getParameter("last_name");
+//        String date = request.getParameter("date");
+//        String email = request.getParameter("email");
+//        String condition = request.getParameter("condition");
+//        String message = request.getParameter("message");
+//        String report_type = "status";
+//
+//        // Print to the server log file the query trail parameters --> Used for development/debugging only
+//        System.out.println("Parameters passed to updateConditions method:");
+//        System.out.println("    Selected Trail ID: " + trail_id);
+//        System.out.println("    Selected First Name: " + first_name);
+//        System.out.println("    Selected Last name: " + last_name);
+//        System.out.println("    Selected Date: " + date);
+//        System.out.println("    Selected Email: " + email);
+//        System.out.println("    Selected Condition: " + condition);
+//        System.out.println("    Selected Message: " + message);
+//        System.out.println("    Selected Report Type: status");
+//
+//        // Add code to create trail condition report
+//        String sql_update_trail_and_report =
+//                "UPDATE trail SET condition_status = '" + condition + "' WHERE trailid = '" + trail_id + "'; " +
+//                "INSERT INTO report (first_name, last_name, trail_id, date_, email, message, report_type) " +
+//                "VALUES (" + trail_id + ", '" + first_name + "', '" + last_name + "', " + date + ", '" + email +
+//                        "', '" + message + "', 'status'); ";
+//        dbutil.modifyDB(sql_update_trail_and_report);
+//
+//        // Record report_id
+//        ResultSet res_1 = dbutil.queryDB("SELECT last_value FROM report");
+//        report_num = res_1.getInt(1);
+//
+//        String sql_update_status =
+//                "INSERT INTO status_report (report_num, condition_type) " +
+//                "VALUES (" + report_num + ", '" + condition + "');";
 //
 //        // Add code to update trail condition based on submitted trail condition report
 //
 //    }
-
-
+//
+//
 //    // Function to submit damage reports
-//    private void submitDamageReport(HttpServletResponse request, HttpServletResponse response) throws
+//    private void submitDamageReport(HttpServletRequest request, HttpServletResponse response) throws
 //            JSONException, SQLException, IOException {
 //        DBUtility dbutil = new DBUtility();
 //        String sql;
-
-
-
-////        // Add code to create a damage report
+//
+//        // Code to create a damage report
+//
 //        // 1. create report
 //        int report_id = 0;
 //        String fN = request.getParameter("fN");
@@ -264,8 +315,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 //        if (damage_date != null) {damage_date = "'" + damage_date + "'";}
 //        if (user_email != null) {user_email = "'" + user_email + "'";}
 //
-//
-//        //record report_id
+//        // Record report_id
 //        ResultSet res_2 = dbutil.queryDB("select last_value from report_id_seq");
 //        res_2.next();
 //        report_id = res_2.getInt(1);
@@ -276,6 +326,59 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 //        dbutil.modifyDB(sql);
 //
 //        // 2. create damage report
+//        String damage_type = request.getParameter("damage");
+//
+//        sql = "insert into damage_report (report_num, damage_type) values (" + report_id + "," + damage_type + ")";
+//        dbutil.modifyDB(sql);
+//
+//
+//        // Response that the report submission is successful
+//        JSONObject data = new JSONObject();
+//        try {
+//            data.put("status", "success");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        response.getWriter().write(data.toString());
+//
+//    }
+//
+//    // Function to create query damageReports SQL statement and return list of damage reports
+//    // NEED TO FINISH //Since we aren't querying from input just a click event do I need this?
+//    private void queryDamageReports(HttpServletRequest request, HttpServletResponse response) throws
+//            JSONException, SQLException, IOException {
+//        JSONArray list = new JSONArray();
+//
+//        DBUtility dbutil = new DBUtility();
+//
+//        // SQL to find parameters for Damage reports
+//        String sql =
+//                "Select report.id, trail.name as trail, date_, report.message, damage_report.damage_type" +
+//                    "ST_Y(report.geom) as latitude, ST_X(report.geom) as longitude\n" +
+//                    "FROM report\n" +
+//                    "INNER JOIN damage_report ON damage_report.report_num = report.id\n" +
+//                    "INNER JOIN trail ON trail.trailID = report.trail_id\n" +
+//                    "WHERE report_type = 'damage'";
+//
+//        // Get the returned result set as variable "res"
+//        ResultSet res = dbutil.queryDB(sql);
+//
+//        // Parse out the "res" result set and put it into the "list" JSON array
+//        while (res.next()) {
+//            // Add to response
+//            HashMap<String, String> m = new HashMap<String, String>();
+//            m.put("report_id", res.getString("id"));
+//            m.put("trail", res.getString("trail"));
+//            m.put("date", res.getString("date_"));
+//            m.put("damage_message", res.getString("message"));
+//            m.put("damage_type", res.getString("damage_type"));
+//            m.put("damage_lat", res.getString("latitude"));
+//            m.put("damage_long", res.getString("longitude"));
+//            list.put(m);
+//        }
+//
+//        // Print out the "list" JSON array in the server console --> Used for development/debugging only
+//        System.out.println("Records returned from trailmaint database:\n" + list);
 //
 //    }
 

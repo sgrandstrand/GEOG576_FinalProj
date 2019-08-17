@@ -22,6 +22,7 @@ function queryTrails(event) {
     });
 }
 
+
 // Form function for updating conditions --> IN WORK
 // function updateConditions(event) {
 //     event.preventDefault(); // stop form from submitting normally
@@ -49,7 +50,8 @@ function queryTrails(event) {
 //     });
 // }
 
-// Form function for submitting damage report --> IN WORK
+
+// // Form function for submitting damage report --> IN WORK
 // function submitDamageReport(event) {
 //     event.preventDefault(); // stop from from submitting normally
 //
@@ -65,6 +67,7 @@ function queryTrails(event) {
 //     a.push({ name: "tab_id", value: "2" });
 //     a = a.filter(function(item){return item.value != '';});
 //     console.log(a);
+//
 //     $.ajax({
 //         url: 'HttpServlet',
 //         type: 'POST',
@@ -77,13 +80,15 @@ function queryTrails(event) {
 //             $("#submit_damage_report_form")[0].reset();
 //
 //             // Reload the map with all markers including the new one
-//             showAllTrails();
+//             showDamageReports();
 //         },
 //         error: function(xhr, status, error) {
 //             alert("Status: " + status + "\nError: " + error);
 //         }
 //     });
 // }
+//
+// // Function for showing the damage reports
 // function showDamageReports(event) {
 //     event.preventDefault(); // stop from from submitting normally
 //
@@ -117,10 +122,9 @@ function queryTrails(event) {
 //             alert("Status: " + status + "\nError: " + error);
 //         }
 //     });
-//
 // }
 
 $("#query_trails_form").on("submit",queryTrails);
 // $("#update_conditions_form").on("submit",updateConditions);
-//$("#submit_damage_report_form").on("submit",submitDamageReport);
-//$("#show_damage_reports").on(onclick, toggle-switch)
+// $("#submit_damage_report_form").on("submit",submitDamageReport);
+// $("#show_damage_reports").on(onclick, toggle-switch)
