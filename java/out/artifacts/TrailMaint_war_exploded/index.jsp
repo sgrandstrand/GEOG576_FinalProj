@@ -188,7 +188,7 @@
 								</div>
 								<br>
 								<button type="submit" class="btn btn-default">
-									<span class="glyphicon glyphicon-star"></span> Submit the query
+									<span class="glyphicon glyphicon-star"></span> Submit the trails query
 								</button>
 							</form>
 						</div>
@@ -280,7 +280,7 @@
                                 <div><label>Message:&nbsp</label><input placeholder="Add a message" name="message"></div>
 								<br>
 								<button type="submit" class="btn btn-default">
-									<span class="glyphicon glyphicon-star"></span> Submit the report
+									<span class="glyphicon glyphicon-star"></span> Submit the conditions report
 								</button>
 							</form>
 						</div>
@@ -376,7 +376,7 @@
                                 <div><label>Location:&nbsp</label><input id="autocomplete" name="location"></div>
 								<br>
 								<button type="submit" class="btn btn-default">
-									<span class="glyphicon glyphicon-star"></span> Submit the report
+									<span class="glyphicon glyphicon-star"></span> Submit the damage report
 								</button>
 							</form>
 						</div>
