@@ -26,6 +26,7 @@ function queryTrails(event) {
 function updateConditions(event) {
     event.preventDefault(); // stop form from submitting normally
 
+<<<<<<< Updated upstream
     var a = $("#update_conditions_form").serializeArray();
     a.push({ name: "tab_id", value: "1" });
     a = a.filter(function(item){return item.value != '';});
@@ -58,6 +59,16 @@ function submitDamageReport(event) {
     // Set the lat/long to the place selected --> use place.geometry.location.lng() and place.geometry.location.lat()
     lat = place.geometry.location.lat();
     long = place.geometry.location.lng();
+=======
+// Form function for submitting damage report --> IN WORK
+function submitDamageReport(event) {
+    event.preventDefault(); // stop from from submitting normally
+
+    var a = $('#submit_damage_report_form').serializeArray();
+
+    // Set the lat/long to the place selected --> use place.geometry.location.lng() and place.geometry.location.lat()
+    lat = place.geometry.location.lat();
+    long = place.geometry.location.lng();
 
     a.push({ name: "latitude", value: lat});
     a.push({ name: "longitude", value: long});
@@ -65,6 +76,8 @@ function submitDamageReport(event) {
     a.push({ name: "tab_id", value: "2" });
     a = a.filter(function(item){return item.value != '';});
     console.log(a);
+>>>>>>> Stashed changes
+
     $.ajax({
         url: 'HttpServlet',
         type: 'POST',
@@ -77,7 +90,7 @@ function submitDamageReport(event) {
             $("#submit_damage_report_form")[0].reset();
 
             // Reload the map with all markers including the new one
-            showAllTrails();
+            showDamageReports();
         },
         error: function(xhr, status, error) {
             alert("Status: " + status + "\nError: " + error);
@@ -86,6 +99,7 @@ function submitDamageReport(event) {
 }
 
 
+<<<<<<< Updated upstream
 //
 // // Form function for querying the trails --> IN WORK
 // function queryTrails(event) {
@@ -175,3 +189,8 @@ function submitDamageReport(event) {
 // $("#query_trails_form").on("submit",queryTrails());
 // $("#update_conditions_form").on("submit",updateConditions());
 // $("#submit_damage_report_form").on("submit",submitDamageReport());
+=======
+$("#query_trails_form").on("submit",queryTrails);
+// $("#update_conditions_form").on("submit",updateConditions);
+$("#submit_damage_report_form").on("submit",submitDamageReport);
+>>>>>>> Stashed changes

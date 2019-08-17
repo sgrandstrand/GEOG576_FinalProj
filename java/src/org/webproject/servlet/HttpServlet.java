@@ -82,6 +82,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 //        }
 
         // Submit a damage report
+<<<<<<< Updated upstream
 //        else if (tab_id.equals("2")) {
 //            System.out.println("A report is submitted!");
 //            try {
@@ -91,7 +92,30 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 //            }
 //        }
     }
+=======
+        else if (tab_id.equals("2")) {
+            System.out.println("A report is submitted!");
+            try {
+                submitDamageReport((HttpServletResponse) request, response);
+            } catch (SQLException | JSONException e) {
+                e.printStackTrace();
+            }
+        }
+>>>>>>> Stashed changes
 
+        // query/show damage reports
+        else if (tab_id.equals("3")) {
+            try {
+                queryDamageReports(request, response);
+            } catch (JSONException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
 
     // Function to create query trails SQL statement and return list of trails
     private void queryTrails(HttpServletRequest request, HttpServletResponse response) throws
@@ -241,12 +265,103 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 
 
     // Function to submit damage reports
+<<<<<<< Updated upstream
 //    private void submitDamageReport(HttpServletResponse request, HttpServletResponse response) throws
 //            JSONException, SQLException, IOException {
 //
 //        // Add code to create a damage report
 //
 //    }
+=======
+    private void submitDamageReport(HttpServletResponse request, HttpServletResponse response) throws
+            JSONException, SQLException, IOException {
+        DBUtility dbutil = new DBUtility();
+        String sql;
+
+//        // Add code to create a damage report
+        // 1. create report
+        int report_id = 0;
+        String fN = request.getParameter("fN");
+        String lN = request.getParameter("lN");
+        String damage_date = request.getParameter("damage_date");
+        String user_email = request.getParameter("user_email");
+        String trail = request.getParameter("trail");
+        String message = request.getParameter("message");
+        String lon = request.getParameter("longitude");
+        String lat = request.getParameter("latitude");
+        if (fN != null) {fN = "'" + fN + "'";}
+        if (lN != null) {lN = "'" + lN + "'";}
+        if (damage_date != null) {damage_date = "'" + damage_date + "'";}
+        if (user_email != null) {user_email = "'" + user_email + "'";}
+
+
+        //record report_id
+        ResultSet res_2 = dbutil.queryDB("select last_value from report_id_seq");
+        res_2.next();
+        report_id = res_2.getInt(1);
+
+        sql = "insert into report (id, first_name, last_name, trail_ID, date_, email, message, report_type, geom," +
+                " message) values (" + report_id + "," + fN + "," + lN + "," + trail + "," + damage_date + "," + user_email + "," + message + ","
+                + "damage" + ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326)" + ")";
+        dbutil.modifyDB(sql);
+
+        // 2. create damage report
+        String damage_type = request.getParameter("damage");
+
+        sql = "insert into damage_report (report_num, damage_type) values (" + report_id + "," + damage_type + ")";
+        dbutil.modifyDB(sql);
+
+
+        // response that the report submission is successful
+        JSONObject data = new JSONObject();
+        try {
+            data.put("status", "success");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        response.getWriter().write(data.toString());
+
+    }
+
+    // Function to create query damageReports SQL statement and return list of damage reports
+    //NEED TO FINISH //Since we aren't querying from input just a click event do I need this?
+    private void queryDamageReports(HttpServletRequest request, HttpServletResponse response) throws
+            JSONException, SQLException, IOException {
+        JSONArray list = new JSONArray();
+
+        DBUtility dbutil = new DBUtility();
+
+        // sql to find parameters for Damage reports
+        String sql =
+                "Select report.id, trail.name as trail, date_, report.message, damage_report.damage_type" +
+                    "ST_Y(report.geom) as latitude, ST_X(report.geom) as longitude\n" +
+                    "FROM report\n" +
+                    "INNER JOIN damage_report ON damage_report.report_num = report.id\n" +
+                    "INNER JOIN trail ON trail.trailID = report.trail_id\n" +
+                    "WHERE report_type = 'damage'";
+
+        // Get the returned result set as variable "res"
+        ResultSet res = dbutil.queryDB(sql);
+
+        // Parse out the "res" result set and put it into the "list" JSON array
+        while (res.next()) {
+            // Add to response
+            HashMap<String, String> m = new HashMap<String, String>();
+            m.put("report_id", res.getString("id"));
+            m.put("trail", res.getString("trail"));
+            m.put("date", res.getString("date_"));
+            m.put("damage_message", res.getString("message"));
+            m.put("damage_type", res.getString("damage_type"));
+            m.put("damage_lat", res.getString("latitude"));
+            m.put("damage_long", res.getString("longitude"));
+            list.put(m);
+        }
+
+        // Print out the "list" JSON array in the server console --> Used for development/debugging only
+        System.out.println("Records returned from trailmaint database:\n" + list);
+
+    }
+>>>>>>> Stashed changes
 
     public void main() throws JSONException {
     }
