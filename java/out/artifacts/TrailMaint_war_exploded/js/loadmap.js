@@ -112,67 +112,56 @@ function mapInitialization(trails) {
     map.fitBounds (bounds);
 }
 
-// // Function to show damage reports
-// function showDamageReports() {
-//     $.ajax({
-//         url: 'HttpServlet',
-//         type: 'POST',
-//         data: { "tab_id": "3"},
-//         success: function(damageReports) {
-//             onDamageReports(damageReports);
-//         },
-//         error: function(xhr, status, error) {
-//             alert("An AJAX error occured: " + status + "\nError: " + error);
-//         }
-//     });
-// }
-//
-// // Function to create visualization of damage reports
-// function onDamageReports(damageReports) {
-//     $.each(damageReports, function(i, e) {
-//         var long = Number(e['damage_long']);
-//         var lat = Number(e['damage_lat']);
-//         var latlng = new google.maps.LatLng(lat, long);
-//
-//         // Create the infoWindow content here
-//         var contentStr = '<h4>Damage Details</h4><hr>';
-//         contentStr += '<p><b>' + 'Trail' + ':</b>&nbsp' + e['trail'] + '</p>';
-//         contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
-//         contentStr += '<p><b>' + 'Damage' + ':</b>&nbsp' + e['damage_type'] + '</p>';
-//         contentStr += '<p><b>' + 'Message' + ':</b>&nbsp' + e['message'] + '</p>';
-//
-//         // Add the marker image variables here
-//         var icons = {
-//             url: 'img/damage.png',
-//             scaledSize: new google.maps.Size(25,25)
-//         };
-//
-//         var marker = new google.maps.Marker({
-//             position: latlng,
-//             icon: icons,
-//             map: map,
-//             customInfo: contentStr
-//         });
-//
-//         // Add a Click Listener to the marker
-//         google.maps.event.addListener(marker, 'click', function() {
-//             // use 'customInfo' to customize infoWindow
-//             infowindow.setContent(marker['customInfo']);
-//             infowindow.open(map, marker); // Open InfoWindow
-//         });
-//     });
-// }
-//
-// // Calls the toggle switch to add or remove damages layer if checked or not
-// $(document).ready(function () {
-//     $('input[type="checkbox"]').click(function () {
-//         if ($(this).is(":checked")) {
-//             showDamageReports();
-//         } else if ($(this).is(":not(:checked)")) {
-//             onDamageReports(null);
-//         }
-//     });
-// });
+// Function to show damage reports
+function showDamageReports() {
+    $.ajax({
+        url: 'HttpServlet',
+        type: 'POST',
+        data: { "tab_id": "3"},
+        success: function(damageReports) {
+            onDamageReports(damageReports);
+        },
+        error: function(xhr, status, error) {
+            alert("An AJAX error occured: " + status + "\nError: " + error);
+        }
+    });
+}
+
+// Function to create visualization of damage reports
+function onDamageReports(damageReports) {
+    $.each(damageReports, function(i, e) {
+        var long = Number(e['damage_long']);
+        var lat = Number(e['damage_lat']);
+        var latlng = new google.maps.LatLng(lat, long);
+
+        // Create the infoWindow content here
+        var contentStr = '<h4>Damage Details</h4><hr>';
+        contentStr += '<p><b>' + 'Trail' + ':</b>&nbsp' + e['trail'] + '</p>';
+        contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
+        contentStr += '<p><b>' + 'Damage' + ':</b>&nbsp' + e['damage_type'] + '</p>';
+        contentStr += '<p><b>' + 'Message' + ':</b>&nbsp' + e['message'] + '</p>';
+
+        // Add the marker image variables here
+        var icons = {
+            url: 'img/damage.png',
+            scaledSize: new google.maps.Size(25,25)
+        };
+
+        var marker = new google.maps.Marker({
+            position: latlng,
+            icon: icons,
+            map: map,
+            customInfo: contentStr
+        });
+
+        // Add a Click Listener to the marker
+        google.maps.event.addListener(marker, 'click', function() {
+            // use 'customInfo' to customize infoWindow
+            infowindow.setContent(marker['customInfo']);
+            infowindow.open(map, marker); // Open InfoWindow
+        });
+    });
+}
 
 // Function to create autocomplete
 function initAutocomplete() {
@@ -198,3 +187,13 @@ function onPlaceChanged() {
 // Execute our 'initialization' function once the page has loaded.
 google.maps.event.addDomListener(window, 'load', initialization);
 
+//calls the toggle switch to add or remove damages layer if checked or not
+$(document).ready(function () {
+    $('input[type="checkbox"]').click(function () {
+        if ($(this).is(":checked")) {
+            showDamageReports();
+        } else if ($(this).is(":not(:checked)")) {
+            onDamageReports(null);   // I might need to create a function to remove markers not just pass null value...
+        }
+    });
+});
