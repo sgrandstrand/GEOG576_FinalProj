@@ -71,25 +71,25 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             }
         }
 
-        // Update trail condition
-//        else if (tab_id.equals("1")) {
-//            System.out.println("Trail Condition Updated!");
+//        // Update trail condition
+////        else if (tab_id.equals("1")) {
+////            System.out.println("Trail Condition Updated!");
+////            try {
+////                updateConditions((HttpServletResponse) request, response); //changed first parameter request
+////            } catch (SQLException | JSONException e) {
+////                e.printStackTrace();
+////            }
+////        }
+//
+//        // Submit a damage report
+//        else if (tab_id.equals("2")) {
+//            System.out.println("A report is submitted!");
 //            try {
-//                updateConditions((HttpServletResponse) request, response); //changed first parameter request
+//                submitDamageReport((HttpServletResponse) request, response);
 //            } catch (SQLException | JSONException e) {
 //                e.printStackTrace();
 //            }
 //        }
-
-        // Submit a damage report
-        else if (tab_id.equals("2")) {
-            System.out.println("A report is submitted!");
-            try {
-                submitDamageReport((HttpServletResponse) request, response);
-            } catch (SQLException | JSONException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
 
@@ -122,9 +122,9 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
                 "SELECT trail.name, county.name as county, state.name as state, trail.mileage, " +
                         "trail.condition_status, trail.difficulty_level, trail.email, trail.website, " +
                         "ST_Y(geom) as latitude, ST_X(geom) as longitude\n" +
-                "FROM trail\n" +
-                "INNER JOIN county on trail.countyid = county.cntyid\n" +
-                "INNER JOIN state on trail.stateid = state.stateid";
+                        "FROM trail\n" +
+                        "INNER JOIN county on trail.countyid = county.cntyid\n" +
+                        "INNER JOIN state on trail.stateid = state.stateid";
 
         // Call queryTrailBuilder function
         queryTrailBuilder(sql_root, list, name, county, state, mileage, condition, difficulty);
@@ -134,7 +134,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 
     // Function to add where clauses to the query trails SQL statement based on the chosen filters.
     private void queryTrailBuilder(String sql_root, JSONArray list, String name, String county, String state,
-                String mileage, String condition, String difficulty) throws SQLException {
+                                   String mileage, String condition, String difficulty) throws SQLException {
         DBUtility dbutil = new DBUtility();
         String sql = "";
 
@@ -240,44 +240,44 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 //    }
 
 
-    // Function to submit damage reports
-    private void submitDamageReport(HttpServletResponse request, HttpServletResponse response) throws
-            JSONException, SQLException, IOException {
-        DBUtility dbutil = new DBUtility();
-        String sql;
+//    // Function to submit damage reports
+//    private void submitDamageReport(HttpServletResponse request, HttpServletResponse response) throws
+//            JSONException, SQLException, IOException {
+//        DBUtility dbutil = new DBUtility();
+//        String sql;
 
 
 
-//        // Add code to create a damage report
-        // 1. create report
-        int report_id = 0;
-        String fN = request.getParameter("fN");
-        String lN = request.getParameter("lN");
-        String damage_date = request.getParameter("damage_date");
-        String user_email = request.getParameter("user_email");
-        String trail = request.getParameter("trail");
-        String message = request.getParameter("message");
-        String lon = request.getParameter("longitude");
-        String lat = request.getParameter("latitude");
-        if (fN != null) {fN = "'" + fN + "'";}
-        if (lN != null) {lN = "'" + lN + "'";}
-        if (damage_date != null) {damage_date = "'" + damage_date + "'";}
-        if (user_email != null) {user_email = "'" + user_email + "'";}
-
-
-        //record report_id
-        ResultSet res_2 = dbutil.queryDB("select last_value from report_id_seq");
-        res_2.next();
-        report_id = res_2.getInt(1);
-
-        sql = "insert into report (id, first_name, last_name, trail_ID, date_, email, message, report_type, geom," +
-                " message) values (" + report_id + "," + fN + "," + lN + "," + trail + "," + damage_date + "," + user_email + "," + message + ","
-                + "damage" + ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326)" + ")";
-        dbutil.modifyDB(sql);
-
-        // 2. create damage report
-
-    }
+////        // Add code to create a damage report
+//        // 1. create report
+//        int report_id = 0;
+//        String fN = request.getParameter("fN");
+//        String lN = request.getParameter("lN");
+//        String damage_date = request.getParameter("damage_date");
+//        String user_email = request.getParameter("user_email");
+//        String trail = request.getParameter("trail");
+//        String message = request.getParameter("message");
+//        String lon = request.getParameter("longitude");
+//        String lat = request.getParameter("latitude");
+//        if (fN != null) {fN = "'" + fN + "'";}
+//        if (lN != null) {lN = "'" + lN + "'";}
+//        if (damage_date != null) {damage_date = "'" + damage_date + "'";}
+//        if (user_email != null) {user_email = "'" + user_email + "'";}
+//
+//
+//        //record report_id
+//        ResultSet res_2 = dbutil.queryDB("select last_value from report_id_seq");
+//        res_2.next();
+//        report_id = res_2.getInt(1);
+//
+//        sql = "insert into report (id, first_name, last_name, trail_ID, date_, email, message, report_type, geom," +
+//                " message) values (" + report_id + "," + fN + "," + lN + "," + trail + "," + damage_date + "," + user_email + "," + message + ","
+//                + "damage" + ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326)" + ")";
+//        dbutil.modifyDB(sql);
+//
+//        // 2. create damage report
+//
+//    }
 
     public void main() throws JSONException {
     }

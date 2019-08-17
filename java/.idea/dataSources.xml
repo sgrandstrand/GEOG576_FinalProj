@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="trailmaint@localhost" uuid="1a06a67a-2754-46b8-9df3-b0f1b0bcd60d">
+    <data-source source="LOCAL" name="trailmaint@localhost" uuid="6d5430d3-2503-4a94-9043-0e0ad1d6989b">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-<!--      <jdbc-url>jdbc:postgresql://localhost:5432/trailmaint</jdbc-url>-->
-<!--      <jdbc-url>jdbc:postgresql://localhost:5436/trailmaint</jdbc-url>-->
-       </data-source>
-     </component>
-   </project>
+      <jdbc-url>jdbc:postgresql://localhost:5432/trailmaint</jdbc-url>
+    </data-source>
+  </component>
+</project>
