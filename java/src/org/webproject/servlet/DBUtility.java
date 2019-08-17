@@ -14,14 +14,14 @@ public class DBUtility {
     // Establish connection --> Dev team -->  Uncomment out your specific PostgreSQL configuration below
 
     // Sarah
-    private static final String ConnUrl = "jdbc:postgresql://localhost:5432/trailmaint";
-    private static final String Username = "postgres";
-    private static final String Password = "postgres";
+//    private static final String ConnUrl = "jdbc:postgresql://localhost:5432/trailmaint";
+//    private static final String Username = "postgres";
+//    private static final String Password = "postgres";
 
     // Kevin
-//    private static final String ConnUrl = "jdbc:postgresql://localhost:5436/trailmaint";
-//    private static final String Username = "postgres";
-//    private static final String Password = "password";
+    private static final String ConnUrl = "jdbc:postgresql://localhost:5436/trailmaint";
+    private static final String Username = "postgres";
+    private static final String Password = "password";
 
     // Megan
 //    private static final String ConnUrl= "jdbc:postgresql://localhost:5432/trailmaint";
@@ -47,7 +47,7 @@ public class DBUtility {
 
     // Execute a sql query (e.g. SELECT) and return a ResultSet
     public ResultSet queryDB(String sql) {
-        System.out.println("SQL query passed to trailmaint database:\n" + sql);
+        System.out.println("QUERY SQL query passed to trailmaint database:\n" + sql);
         Connection conn = connectDB();
         ResultSet res = null;
         try {
@@ -65,6 +65,7 @@ public class DBUtility {
     // Execute a sql query (e.g. INSERT) to modify the database;
     // No return value needed
     public void modifyDB(String sql) {
+        System.out.println("MODIFY SQL query passed to trailmaint database:\n" + sql);
         Connection conn = connectDB();
         try {
             if (conn != null) {

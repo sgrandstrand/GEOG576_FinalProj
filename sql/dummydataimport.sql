@@ -35,3 +35,9 @@ ALTER TABLE report ADD COLUMN report_type report_intent;
 UPDATE report SET report_type = 'status' WHERE latitude IS NULL;
 
 UPDATE report SET report_type = 'damage' WHERE report_type IS NULL;
+
+
+-- need to add timestamp to trail table
+ALTER TABLE trail ADD COLUMN last_condition_update date;
+
+UPDATE trail SET last_condition_update = '2019-08-02';
