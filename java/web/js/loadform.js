@@ -91,7 +91,7 @@ function updateConditions(event) {
 //         }
 //     });
 // }
-//
+
 // // Function for showing the damage reports
 // function showDamageReports(event) {
 //     event.preventDefault(); // stop from from submitting normally
@@ -131,4 +131,3 @@ function updateConditions(event) {
 $("#query_trails_form").on("submit",queryTrails);
 $("#update_conditions_form").on("submit",updateConditions);
 // $("#submit_damage_report_form").on("submit",submitDamageReport);
-// $("#show_damage_reports").on(onclick, toggle-switch)

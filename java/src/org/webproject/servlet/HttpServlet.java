@@ -17,8 +17,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.webproject.servlet.DBUtility;
-
 /**
  * Servlet implementation class HttpServlet
  */
@@ -74,7 +72,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         // Update trail condition
         else if (tab_id.equals("1")) {
             try {
-                updateConditions(request, response); //changed first parameter request
+                updateConditions(request, response);
                 System.out.println("Trail Condition Updated!");
             } catch (SQLException | JSONException e) {
                 e.printStackTrace();
@@ -83,26 +81,26 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 
 //        // Submit a damage report
 //        else if (tab_id.equals("2")) {
-//            System.out.println("A damage report is submitted!");
 //            try {
 //                submitDamageReport(request, response);
+//                System.out.println("A damage report is submitted!");
 //            } catch (SQLException | JSONException e) {
 //                e.printStackTrace();
 //            }
 //        }
-//
-//        // Query/show damage reports
-//        else if (tab_id.equals("3")) {
-//            try {
-//                queryDamageReports(request, response);
-//            } catch (JSONException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            } catch (SQLException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            }
-//        }
+
+        // Query damage reports
+        else if (tab_id.equals("3")) {
+            try {
+                queryDamageReports(request, response);
+            } catch (JSONException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -353,45 +351,46 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 //        response.getWriter().write(data.toString());
 //
 //    }
-//
-//    // Function to create query damageReports SQL statement and return list of damage reports
-//    // NEED TO FINISH //Since we aren't querying from input just a click event do I need this?
-//    private void queryDamageReports(HttpServletRequest request, HttpServletResponse response) throws
-//            JSONException, SQLException, IOException {
-//        JSONArray list = new JSONArray();
-//
-//        DBUtility dbutil = new DBUtility();
-//
-//        // SQL to find parameters for Damage reports
-//        String sql =
-//                "Select report.id, trail.name as trail, date_, report.message, damage_report.damage_type" +
-//                    "ST_Y(report.geom) as latitude, ST_X(report.geom) as longitude\n" +
-//                    "FROM report\n" +
-//                    "INNER JOIN damage_report ON damage_report.report_num = report.id\n" +
-//                    "INNER JOIN trail ON trail.trailID = report.trail_id\n" +
-//                    "WHERE report_type = 'damage'";
-//
-//        // Get the returned result set as variable "res"
-//        ResultSet res = dbutil.queryDB(sql);
-//
-//        // Parse out the "res" result set and put it into the "list" JSON array
-//        while (res.next()) {
-//            // Add to response
-//            HashMap<String, String> m = new HashMap<String, String>();
-//            m.put("report_id", res.getString("id"));
-//            m.put("trail", res.getString("trail"));
-//            m.put("date", res.getString("date_"));
-//            m.put("damage_message", res.getString("message"));
-//            m.put("damage_type", res.getString("damage_type"));
-//            m.put("damage_lat", res.getString("latitude"));
-//            m.put("damage_long", res.getString("longitude"));
-//            list.put(m);
-//        }
-//
-//        // Print out the "list" JSON array in the server console --> Used for development/debugging only
-//        System.out.println("Records returned from trailmaint database:\n" + list);
-//
-//    }
+
+    // Function to create query damageReports SQL statement and return list of damage reports
+    // NEED TO FINISH //Since we aren't querying from input just a click event do I need this?
+    private void queryDamageReports(HttpServletRequest request, HttpServletResponse response) throws
+            JSONException, SQLException, IOException {
+        JSONArray list = new JSONArray();
+
+        DBUtility dbutil = new DBUtility();
+
+        // SQL to find parameters for Damage reports
+        String sql =
+                "Select report.id, trail.name as trail, date_, report.message, damage_report.damage_type, " +
+                    "ST_Y(report.geom) as latitude, ST_X(report.geom) as longitude\n" +
+                    "FROM report\n" +
+                    "INNER JOIN damage_report ON damage_report.report_num = report.id\n" +
+                    "INNER JOIN trail ON trail.trailID = report.trail_id\n" +
+                    "WHERE report_type = 'damage'";
+
+        // Get the returned result set as variable "res"
+        ResultSet res = dbutil.queryDB(sql);
+
+        // Parse out the "res" result set and put it into the "list" JSON array
+        while (res.next()) {
+            // Add to response
+            HashMap<String, String> m = new HashMap<String, String>();
+            m.put("report_id", res.getString("id"));
+            m.put("trail", res.getString("trail"));
+            m.put("date", res.getString("date_"));
+            m.put("damage_message", res.getString("message"));
+            m.put("damage_type", res.getString("damage_type"));
+            m.put("damage_lat", res.getString("latitude"));
+            m.put("damage_long", res.getString("longitude"));
+            list.put(m);
+        }
+
+        // Print out the "list" JSON array in the server console --> Used for development/debugging only
+        System.out.println("Records returned from trailmaint database:\n" + list);
+
+        response.getWriter().write(list.toString());
+    }
 
     public void main() throws JSONException {
     }

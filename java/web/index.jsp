@@ -379,8 +379,14 @@
 								</button>
 							</form>
 						</div>
+						<br>
+						<div><label>Toggle Map Layers</label></div>
+<%--						<div id="toggle-trails"><p id="toggle-text"> Trail Locations <label class="switch"--%>
+<%--							id="trails-toggle-switch"><input type="checkbox" checked><span class="slider round"></span></label></p>--%>
+<%--						</div>--%>
+<%--						<br>--%>
 						<div id="toggle-damage"><p id="toggle-text"> Damage Report Locations <label class="switch"
-							id="toggle-switch"><input type="checkbox"><span class="slider round"></span></label></p>
+							id="damage-toggle-switch"><input type="checkbox"><span class="slider round"></span></label></p>
 						</div>
 					</div>
 				</div>
