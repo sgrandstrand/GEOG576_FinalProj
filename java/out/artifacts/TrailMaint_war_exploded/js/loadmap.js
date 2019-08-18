@@ -48,9 +48,7 @@ function mapInitialization(trails) {
         bounds.extend(latlng);
 
         // Create the infoWindow content here
-        //var contentStr = '<h4>Trail Details</h4><hr>';
-        var contentStr = '<h4>'+ e['trail_name']+'</h4>';
-            //contentStr += '<p><b>' + 'Name' + ':</b>&nbsp' + e['trail_name'] + '</p>';
+        var contentStr = '<h4>'+ e['trail_name']+'</h4><hr>';
             contentStr += '<p><b>' + 'County' + ':</b>&nbsp' + e['trail_county'] + '</p>';
             contentStr += '<p><b>' + 'State' + ':</b>&nbsp' + e['trail_state'] + '</p>';
             contentStr += '<p><b>' + 'Total Mileage' + ':</b>&nbsp' + e['trail_mileage'] + '</p>';
@@ -141,11 +139,11 @@ function onDamageReports(damageReports) {
         var latlng = new google.maps.LatLng(lat, long);
 
         // Create the infoWindow content here
-        var contentStr = '<h4>Damage Details</h4><hr>';
-        contentStr += '<p><b>' + 'Trail' + ':</b>&nbsp' + e['trail'] + '</p>';
-        contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
-        contentStr += '<p><b>' + 'Damage' + ':</b>&nbsp' + e['damage_type'] + '</p>';
-        contentStr += '<p><b>' + 'Message' + ':</b>&nbsp' + e['message'] + '</p>';
+        var contentStr = '<h4>Trail Damage Details</h4><hr>';
+            contentStr += '<p><b>' + 'Trail' + ':</b>&nbsp' + e['damage_trail'] + '</p>';
+            contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['damage_date'] + '</p>';
+            contentStr += '<p><b>' + 'Damage' + ':</b>&nbsp' + e['damage_type'] + '</p>';
+            contentStr += '<p><b>' + 'Message' + ':</b>&nbsp' + e['damage_message'] + '</p>';
 
         // Add the marker image variables here
         var icons = {

@@ -289,10 +289,6 @@
 							<form id = "submit_damage_report_form">
 								<div><label>Submit A Damage Report</label></div>
 								<br>
-								<div><label>First Name:&nbsp</label><input placeholder="Your first name" name="fN"></div>
-								<div><label>Last Name:&nbsp</label><input placeholder="Your last name" name="lN"></div>
-								<div><label>Date (YYYY-MM-DD):&nbsp</label><input placeholder="Date" name="damage_date"></div>
-								<div><label>Email:&nbsp</label><input placeholder="Your email" name="user_email"></div>
 								<div><label>Trail Name:</label>
 									<select name="trail">
 										<option value="">Choose Trail</option>
@@ -360,6 +356,10 @@
 										<option value=22>Wakefield Park</option>
 									</select>
 								</div>
+								<div><label>First Name:&nbsp</label><input placeholder="Your first name" name="fN"></div>
+								<div><label>Last Name:&nbsp</label><input placeholder="Your last name" name="lN"></div>
+								<div><label>Date (YYYY-MM-DD):&nbsp</label><input placeholder="Date" name="damage_date"></div>
+								<div><label>Email:&nbsp</label><input placeholder="Your email" name="user_email"></div>
 								<div><label>Damage Type:</label>
 									<select name="damage_type">
 										<option value="">Choose Damage</option>
