@@ -89,7 +89,7 @@ input:checked + .slider:before {
 
 #map-canvas {
     height:100%;
-    position: absolute;
+    position: relative;
     right:0;
 }
 /*popup test*/
