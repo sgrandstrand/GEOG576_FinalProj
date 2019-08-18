@@ -24,9 +24,9 @@ public class DBUtility {
 //    private static final String Password = "password";
 
     // Megan
-    private static final String ConnUrl= "jdbc:postgresql://localhost:5432/trailmaint";
-    private static final String Username = "postgres";
-    private static final String Password = "BeTheCowboy";
+//    private static final String ConnUrl= "jdbc:postgresql://localhost:5432/trailmaint";
+//    private static final String Username = "postgres";
+//    private static final String Password = "BeTheCowboy";
 
     // This is a constructor
     public DBUtility() {
