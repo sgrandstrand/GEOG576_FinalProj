@@ -55,8 +55,8 @@ function mapInitialization(trails) {
             contentStr += '<p><b>' + 'Last Reported Condition' + ':</b>&nbsp' + e['trail_condition'] + '</p>';
             contentStr += '<p><b>' + 'Last Condition Update' + ':</b>&nbsp' + e['trail_last_condition_update'] + '</p>';
             contentStr += '<p><b>' + 'Difficulty Level' + ':</b>&nbsp' + e['trail_difficulty'] + '</p>';
-            contentStr += '<p><b>' + 'MORE Liason Contact Info' + ':</b>&nbsp' + e['trail_email'] + '</p>';
-            contentStr += '<p><b>' + 'MORE Information Page' + ':</b>&nbsp' + e['trail_website'] + '</p>';
+            contentStr += '<p><b>' + 'MORE Liason Contact Info' + ':</b>&nbsp' + '<a href=e["trail_website"] target="blank">' + e['trail_website'] + '</a></p>';
+            contentStr += '<p><b>' + 'MORE Information Page' + ':</b>&nbsp' + '<a href=e["trail_email"] target="blank">' + e['trail_email'] + '</a></p>';
             contentStr += '<p><b>' + 'Coordinates' + ':</b>&nbsp' + e['trail_lat'] + ', ' + e['trail_long'] + '</p>';
 
         // Add the marker image variables here

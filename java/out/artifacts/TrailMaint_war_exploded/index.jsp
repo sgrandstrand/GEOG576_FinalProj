@@ -38,7 +38,7 @@
 
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<a href="https://www.more-mtb.org"><img src="img/MORE-Logo_450x.png" alt="MORE Logo" style="width:90px;height:45px;"></a>
+            <a href="https://www.more-mtb.org" target="blank"><img src="img/MORE-Logo_450x.png" alt="MORE Logo" style="width:90px;height:45px;float:left;padding:4px;"></a>
 			<a class="navbar-brand">MORE Trails Portal</a>
 		</nav>
 
