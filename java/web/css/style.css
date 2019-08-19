@@ -27,7 +27,6 @@ form {
     width: 60px;
     height: 34px;
     right: 10px;
-
 }
 
 /* Hide default HTML checkbox */
@@ -92,6 +91,7 @@ input:checked + .slider:before {
     position: relative;
     right:0;
 }
+
 /*popup test*/
 .gm-style .gm-style-iw-c {
     font-family: "Helvetica";

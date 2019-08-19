@@ -32,20 +32,23 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 		<!-- Google Map js libraries -->
-		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsknU0BjvUqyd4Y78SK7WWrtKlJICo268&libraries=geometry,places"></script>
+		<script async defer	src="https://maps.googleapis.com/maps/api/js?
+		key=YOURKEYHERE&libraries=geometry,places"></script>
 
 	</head>
 
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
-            <a href="https://www.more-mtb.org" target="blank"><img src="img/MORE-Logo_450x.png" alt="MORE Logo" style="width:90px;height:45px;float:left;padding:4px;"></a>
-			<a class="navbar-brand">MORE Trails Portal</a>
+            <a href="https://www.more-mtb.org" target="blank">
+				<img src="img/MORE-Logo_450x.png" alt="MORE Logo"
+					 style="width:90px;height:45px;float:left;padding:4px;"></a>
+			<a class="navbar-brand" href="https://www.more-mtb.org">MORE (Mid-Atlantic Off-Road Enthusiasts) Trails Portal</a>
 		</nav>
 
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="sidebar col-xs-3">
+				<div class="sidebar col-xs-2">
 					<!-- Tab Nav -->
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#query_trails" data-toggle="tab">Find Trails to Ride</a></li>
@@ -60,7 +63,8 @@
 							<form id = "query_trails_form">
 								<!--Want to add autocomplete on state, county and trail based on input, should be
 								able to do this by corresponding with HTTPServlet -->
-								<!-- "onselectreport" function from labs may be the way to autopopulate/dynamically choose. if have time. -->
+								<!-- "onSelectReport" function from labs may be the way to
+								autopopulate/dynamically choose. If have time. -->
 								<div><label>Find Trails to Ride</label></div>
 								<br>
 								<div><label>State:</label>
@@ -373,9 +377,10 @@
 									</select>
 								</div>
                                 <div><label>Message:&nbsp</label><input placeholder="Add a message" name="message"></div>
-								<div><label>Location: Click on map to select location&nbsp</label>
+								<div><label>Location: (Click on map to select location)</label>
+									<br>
 									<label>Latitude:</label><input type="text" id = "lat" name="latitude" readonly><br>
-									<label>LongitudeL</label><input type="text" id="lng" name="longitude" readonly>
+									<label>Longitude:</label><input type="text" id="lng" name="longitude" readonly>
 								</div>
 								<br>
 								<button type="submit" class="btn btn-default">
@@ -396,7 +401,7 @@
 				</div>
 
                 <!-- Map Panel -->
-				<div id="map-canvas" class="col-xs-9"></div>
+				<div id="map-canvas" class="col-xs-10"></div>
 
 			</div>
 		</div>

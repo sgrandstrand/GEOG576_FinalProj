@@ -55,19 +55,11 @@ function updateConditions(event) {
 }
 
 
-// Form function for submitting damage report --> IN WORK
+// Form function for submitting damage report
 function submitDamageReport(event) {
     event.preventDefault(); // stop from from submitting normally
 
     var a = $("#submit_damage_report_form").serializeArray();
-
-    // UNCOMMENT OUT if can't figure out geometry portion - SARAH
-    // Set the lat/long to the place selected --> use place.geometry.location.lng() and place.geometry.location.lat()
-    // lat = place.geometry.location.lat();
-    // long = place.geometry.location.lng();
-    //
-    // a.push({ name: "latitude", value: lat});
-    // a.push({ name: "longitude", value: long});
 
     a.push({ name: "tab_id", value: "2" });
     a = a.filter(function(item){return item.value != '';});

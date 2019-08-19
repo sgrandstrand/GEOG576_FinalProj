@@ -56,8 +56,8 @@ function mapInitialization(trails) {
             contentStr += '<p><b>' + 'Last Reported Condition' + ':</b>&nbsp' + e['trail_condition'] + '</p>';
             contentStr += '<p><b>' + 'Last Condition Update' + ':</b>&nbsp' + e['trail_last_condition_update'] + '</p>';
             contentStr += '<p><b>' + 'Difficulty Level' + ':</b>&nbsp' + e['trail_difficulty'] + '</p>';
-            contentStr += '<p><b>' + 'MORE Liason Contact Info' + ':</b>&nbsp' + '<a href=e["trail_website"] target="blank">' + e['trail_website'] + '</a></p>';
-            contentStr += '<p><b>' + 'MORE Information Page' + ':</b>&nbsp' + '<a href=e["trail_email"] target="blank">' + e['trail_email'] + '</a></p>';
+            contentStr += '<p><b>' + 'MORE Liason Contact Info' + ':</b>&nbsp' + '<a href=mailto:' + e["trail_website"] + ' target="blank">' + e['trail_website'] + '</a></p>';
+            contentStr += '<p><b>' + 'MORE Information Page' + ':</b>&nbsp' + '<a href=' + e["trail_email"] + ' target="blank">' + e['trail_email'] + '</a></p>';
             contentStr += '<p><b>' + 'Coordinates' + ':</b>&nbsp' + e['trail_lat'] + ', ' + e['trail_long'] + '</p>';
 
         // Add the marker image variables here
@@ -116,7 +116,7 @@ function mapInitialization(trails) {
     });
     map.fitBounds(bounds);
 
-    // Add a Click Listener to the map so user can add damage report  -SARAH (possibly need to delete
+    // Add a Click Listener to the map so user can add damage report coordinates
     google.maps.event.addListener(map, 'click', function (event) {
         var clickedLocation = event.latLng;
         if (newdamagemarker === false) {
@@ -246,26 +246,6 @@ function onPlaceChanged() {
     address.setPosition(place.geometry.location);
     address.setVisible(true);
 }
-// trying something so commented out
-// function createNewDamage(latlng) {
-//
-//    // document.getElementById("lat").value = event.latLng.lat();
-//    // document.getElementById("long").value = event.latLng.lng();
-//     if (newdamagemarker === false) {
-//         newdamagemarker = new google.maps.Marker({
-//             position: latlng,
-//             map: map,
-//             draggable: true
-//         });
-//         google.maps.event.addListener(newdamagemarker, 'dragend', function (event) {
-//             markerLocation();
-//         });
-//     } else {
-//         newdamagemarker.setPosition(latlng);
-//     }
-//     markerLocation();
-//     };
-
 
 function markerLocation() {
     var currentLocation = newdamagemarker.getPosition();
