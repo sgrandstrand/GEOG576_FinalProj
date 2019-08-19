@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 		<!-- Google Map js libraries -->
-		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&libraries=places"></script>
+		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&libraries=geometry,places"></script>
 
 	</head>
 
@@ -373,7 +373,10 @@
 									</select>
 								</div>
                                 <div><label>Message:&nbsp</label><input placeholder="Add a message" name="message"></div>
-                                <div><label>Location:&nbsp</label><input id="autocomplete" name="location"></div>
+								<div><label>Location: Click on map to select location&nbsp</label>
+									<label>Latitude:</label><input type="text" id = "lat" name="latitude" readonly><br>
+									<label>Longitude:</label><input type="text" id="lng" name="longitude" readonly>
+								</div>
 								<br>
 								<button type="submit" class="btn btn-default">
 									<span class="glyphicon glyphicon-star"></span> Submit the damage report

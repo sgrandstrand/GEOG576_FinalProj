@@ -7,6 +7,7 @@ var infowindow = new google.maps.InfoWindow();
 
 var trail_markers = [];
 var damage_markers = [];
+var newdamagemarker = false;
 
 // Function to initialize the page
 function initialization() {
@@ -32,15 +33,15 @@ function showAllTrails() {
 // Function to initialize the map
 function mapInitialization(trails) {
     var mapOptions = {
-        mapTypeId : google.maps.MapTypeId.TERRAIN // Set the type of Map
+        mapTypeId: google.maps.MapTypeId.TERRAIN // Set the type of Map
     };
 
     // Render the map within the empty div
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-    var bounds = new google.maps.LatLngBounds ();
+    var bounds = new google.maps.LatLngBounds();
 
-    $.each(trails, function(i, e) {
+    $.each(trails, function (i, e) {
         var long = Number(e['trail_long']);
         var lat = Number(e['trail_lat']);
         var latlng = new google.maps.LatLng(lat, long);
@@ -63,31 +64,31 @@ function mapInitialization(trails) {
         var icons = {
             null: {
                 url: 'img/unknown.png',
-                scaledSize: new google.maps.Size(25,25)
+                scaledSize: new google.maps.Size(25, 25)
             },
             green: {
-                url:'img/green.png',
-                scaledSize: new google.maps.Size(25,25)
-             },
+                url: 'img/green.png',
+                scaledSize: new google.maps.Size(25, 25)
+            },
             greentoblue: {
-                url:'img/greentoblue.png',
-                scaledSize: new google.maps.Size(25,25)
+                url: 'img/greentoblue.png',
+                scaledSize: new google.maps.Size(25, 25)
             },
             greentoblack: {
-                url:'img/greentoblack.png',
-                scaledSize: new google.maps.Size(25,25)
+                url: 'img/greentoblack.png',
+                scaledSize: new google.maps.Size(25, 25)
             },
             blue: {
-                url:'img/blue.png',
-                scaledSize: new google.maps.Size(25,25)
+                url: 'img/blue.png',
+                scaledSize: new google.maps.Size(25, 25)
             },
             bluetoblack: {
-                url:'img/bluetoblack.png',
-                scaledSize: new google.maps.Size(25,25)
+                url: 'img/bluetoblack.png',
+                scaledSize: new google.maps.Size(25, 25)
             },
             black: {
-                url:'img/black.png',
-                scaledSize: new google.maps.Size(25,25)
+                url: 'img/black.png',
+                scaledSize: new google.maps.Size(25, 25)
             }
         };
 
@@ -95,7 +96,7 @@ function mapInitialization(trails) {
         if (str == null) {
             str = "null";
         } else
-        str = str.replace(/\s/g,'');
+            str = str.replace(/\s/g, '');
 
         var marker = new google.maps.Marker({
             position: latlng,
@@ -107,13 +108,33 @@ function mapInitialization(trails) {
         trail_markers.push(marker);
 
         // Add a Click Listener to the marker
-        google.maps.event.addListener(marker, 'click', function() {
-        // use 'customInfo' to customize infoWindow
-        infowindow.setContent(marker['customInfo']);
-        infowindow.open(map, marker); // Open InfoWindow
+        google.maps.event.addListener(marker, 'click', function () {
+            // use 'customInfo' to customize infoWindow
+            infowindow.setContent(marker['customInfo']);
+            infowindow.open(map, marker); // Open InfoWindow
         });
     });
-    map.fitBounds (bounds);
+    map.fitBounds(bounds);
+
+    // Add a Click Listener to the map so user can add damage report coordinates
+    google.maps.event.addListener(map, 'click', function (event) {
+        var clickedLocation = event.latLng;
+        if (newdamagemarker === false) {
+        newdamagemarker = new google.maps.Marker({
+            position: clickedLocation,
+            map: map,
+            draggable: true
+        });
+        google.maps.event.addListener(newdamagemarker, 'dragend', function (event) {
+            markerLocation();
+        });
+    } else {
+        newdamagemarker.setPosition(clickedLocation);
+    }
+    markerLocation();
+
+        //createNewDamage(event.latLng);
+    });
 }
 
 // Function to show damage reports
@@ -224,6 +245,15 @@ function onPlaceChanged() {
     map.fitBounds(place.geometry.viewport);
     address.setPosition(place.geometry.location);
     address.setVisible(true);
+}
+
+function markerLocation() {
+    var currentLocation = newdamagemarker.getPosition();
+    document.getElementById('lat').value = currentLocation.lat();
+    document.getElementById('lng').value = currentLocation.lng();
+
+    console.log(newdamagemarker.getPosition());
+
 }
 
 // Execute our 'initialization' function once the page has loaded.
