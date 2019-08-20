@@ -55,7 +55,7 @@ function updateConditions(event) {
 }
 
 
-// Form function for submitting damage report --> IN WORK
+// Form function for submitting damage report
 function submitDamageReport(event) {
     event.preventDefault(); // stop from from submitting normally
 
