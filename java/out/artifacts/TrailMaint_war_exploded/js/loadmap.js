@@ -116,7 +116,7 @@ function mapInitialization(trails) {
     });
     map.fitBounds(bounds);
 
-    // Add a Click Listener to the map so user can add damage report  -SARAH (possibly need to delete
+    // Add a Click Listener to the map so user can add damage report coordinates
     google.maps.event.addListener(map, 'click', function (event) {
         var clickedLocation = event.latLng;
         if (newdamagemarker === false) {
@@ -246,26 +246,6 @@ function onPlaceChanged() {
     address.setPosition(place.geometry.location);
     address.setVisible(true);
 }
-// trying something so commented out
-// function createNewDamage(latlng) {
-//
-//    // document.getElementById("lat").value = event.latLng.lat();
-//    // document.getElementById("long").value = event.latLng.lng();
-//     if (newdamagemarker === false) {
-//         newdamagemarker = new google.maps.Marker({
-//             position: latlng,
-//             map: map,
-//             draggable: true
-//         });
-//         google.maps.event.addListener(newdamagemarker, 'dragend', function (event) {
-//             markerLocation();
-//         });
-//     } else {
-//         newdamagemarker.setPosition(latlng);
-//     }
-//     markerLocation();
-//     };
-
 
 function markerLocation() {
     var currentLocation = newdamagemarker.getPosition();

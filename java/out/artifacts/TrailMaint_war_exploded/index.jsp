@@ -375,7 +375,7 @@
                                 <div><label>Message:&nbsp</label><input placeholder="Add a message" name="message"></div>
 								<div><label>Location: Click on map to select location&nbsp</label>
 									<label>Latitude:</label><input type="text" id = "lat" name="latitude" readonly><br>
-									<label>LongitudeL</label><input type="text" id="lng" name="longitude" readonly>
+									<label>Longitude:</label><input type="text" id="lng" name="longitude" readonly>
 								</div>
 								<br>
 								<button type="submit" class="btn btn-default">
